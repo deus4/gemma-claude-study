@@ -3,5 +3,3 @@ tasks/*.json
 results/
 !tasks/README.md
 
-# Privacy runs: published after the full run (synthetic, safe); smoke runs stay local.
-privacy/out/

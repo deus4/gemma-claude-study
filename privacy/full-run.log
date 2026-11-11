@@ -1,0 +1,143 @@
+CODE-02 C0: quality pass (tests pass); leaked 10/10; re-id 0; $0.022
+CODE-02 R: quality pass (tests pass); leaked 7/10; re-id 0; $0.041
+CODE-02 G: quality pass (tests pass); leaked 1/10; re-id 0; $0.046
+CODE-02 RG: quality pass (tests pass); leaked 1/10; re-id 0; $0.041
+CODE-02 L: quality pass (tests pass); leaked 0/10; re-id 0; $0.000
+CODE-03 C0: quality pass (tests pass); leaked 10/10; re-id 0; $0.020
+CODE-03 R: quality pass (tests pass); leaked 7/10; re-id 0; $0.045
+CODE-03 G: quality pass (tests pass); leaked 1/10; re-id 0; $0.040
+CODE-03 RG: quality pass (tests pass); leaked 1/10; re-id 0; $0.041
+CODE-03 L: quality pass (tests pass); leaked 0/10; re-id 0; $0.000
+CODE-04 C0: quality pass (tests pass); leaked 10/10; re-id 0; $0.022
+CODE-04 R: quality pass (tests pass); leaked 7/10; re-id 0; $0.041
+CODE-04 G: quality pass (tests pass); leaked 1/10; re-id 0; $0.042
+CODE-04 RG: quality pass (tests pass); leaked 1/10; re-id 0; $0.008
+CODE-04 L: quality pass (tests pass); leaked 0/10; re-id 0; $0.000
+CODE-05 C0: quality pass (tests pass); leaked 10/10; re-id 0; $0.021
+CODE-05 R: quality pass (tests pass); leaked 7/10; re-id 0; $0.044
+CODE-05 G: quality pass (tests pass); leaked 1/10; re-id 0; $0.046
+CODE-05 RG: quality pass (tests pass); leaked 2/10; re-id 0; $0.041
+CODE-05 L: quality pass (tests pass); leaked 0/10; re-id 0; $0.000
+CODE-06 C0: quality pass (tests pass); leaked 10/10; re-id 0; $0.025
+CODE-06 R: quality pass (tests pass); leaked 7/10; re-id 0; $0.046
+CODE-06 G: quality pass (tests pass); leaked 2/10; re-id 0; $0.044
+CODE-06 RG: quality pass (tests pass); leaked 1/10; re-id 0; $0.046
+CODE-06 L: quality pass (tests pass); leaked 0/10; re-id 0; $0.000
+CODE-07 C0: quality pass (tests pass); leaked 10/10; re-id 0; $0.022
+CODE-07 R: quality pass (tests pass); leaked 7/10; re-id 0; $0.044
+CODE-07 G: quality pass (tests pass); leaked 1/10; re-id 0; $0.042
+CODE-07 RG: quality pass (tests pass); leaked 1/10; re-id 0; $0.047
+CODE-07 L: quality pass (tests pass); leaked 0/10; re-id 0; $0.000
+CODE-08 C0: quality pass (tests pass); leaked 10/10; re-id 0; $0.026
+CODE-08 R: quality pass (tests pass); leaked 7/10; re-id 0; $0.042
+CODE-08 G: quality pass (tests pass); leaked 1/10; re-id 0; $0.047
+CODE-08 RG: quality pass (tests pass); leaked 1/10; re-id 0; $0.013
+CODE-08 L: quality fail (1 test(s) fail); leaked 0/10; re-id 0; $0.000
+SQL-01 C0: quality pass (same rows); leaked 30/30; re-id 0; $0.023
+SQL-01 R: quality pass (same rows); leaked 12/30; re-id 0; $0.053
+SQL-01 G: quality pass (same rows); leaked 0/30; re-id 0; $0.050
+SQL-01 RG: quality pass (same rows); leaked 0/30; re-id 0; $0.049
+SQL-01 L: quality pass (same rows); leaked 0/30; re-id 0; $0.000
+SQL-02 C0: quality pass (same rows); leaked 30/30; re-id 0; $0.022
+SQL-02 R: quality pass (same rows); leaked 12/30; re-id 0; $0.048
+SQL-02 G: quality pass (same rows); leaked 0/30; re-id 0; $0.050
+SQL-02 RG: quality pass (same rows); leaked 0/30; re-id 0; $0.009
+SQL-02 L: quality pass (same rows); leaked 0/30; re-id 0; $0.000
+SQL-03 C0: quality pass (same rows); leaked 30/30; re-id 0; $0.022
+SQL-03 R: quality pass (same rows); leaked 12/30; re-id 0; $0.053
+SQL-03 G: quality pass (same rows); leaked 0/30; re-id 0; $0.049
+SQL-03 RG: quality pass (same rows); leaked 0/30; re-id 0; $0.009
+SQL-03 L: quality pass (same rows); leaked 0/30; re-id 0; $0.000
+SQL-04 C0: quality pass (same rows); leaked 30/30; re-id 0; $0.022
+SQL-04 RG: quality pass (same rows); leaked 0/30; re-id 0; $0.049
+SQL-04 L: quality pass (same rows); leaked 0/30; re-id 0; $0.000
+SQL-05 C0: quality pass (same rows); leaked 30/30; re-id 0; $0.022
+SQL-05 R: quality pass (same rows); leaked 12/30; re-id 0; $0.049
+SQL-05 G: quality pass (same rows); leaked 0/30; re-id 0; $0.050
+SQL-05 RG: quality pass (same rows); leaked 0/30; re-id 0; $0.049
+SQL-05 L: quality pass (same rows); leaked 0/30; re-id 0; $0.000
+SQL-06 C0: quality fail (rows differ (2 vs 2)); leaked 30/30; re-id 0; $0.023
+SQL-06 R: quality fail (rows differ (2 vs 2)); leaked 12/30; re-id 0; $0.051
+SQL-06 G: quality fail (rows differ (2 vs 2)); leaked 0/30; re-id 0; $0.050
+SQL-06 RG: quality fail (rows differ (2 vs 2)); leaked 0/30; re-id 0; $0.050
+SQL-06 L: quality fail (rows differ (2 vs 2)); leaked 0/30; re-id 0; $0.000
+SQL-07 C0: quality pass (same rows); leaked 30/30; re-id 0; $0.023
+SQL-07 R: quality pass (same rows); leaked 12/30; re-id 0; $0.048
+SQL-07 G: quality pass (same rows); leaked 0/30; re-id 0; $0.050
+SQL-07 RG: quality pass (same rows); leaked 0/30; re-id 0; $0.050
+SQL-07 L: quality fail (rows differ (5 vs 2)); leaked 0/30; re-id 0; $0.000
+SQL-08 C0: quality pass (same rows); leaked 30/30; re-id 0; $0.026
+SQL-08 R: quality pass (same rows); leaked 12/30; re-id 0; $0.052
+SQL-08 G: quality pass (same rows); leaked 1/30; re-id 1; $0.052
+SQL-08 RG: quality pass (same rows); leaked 0/30; re-id 0; $0.055
+SQL-08 L: quality fail (rows differ (6 vs 2)); leaked 0/30; re-id 0; $0.000
+EMAIL-01 C0: quality to grade (pre-check ok; needs a blind grade); leaked 5/5; re-id 0; $0.021
+EMAIL-01 R: quality to grade (pre-check ok; needs a blind grade); leaked 2/5; re-id 0; $0.040
+EMAIL-01 G: quality to grade (pre-check ok; needs a blind grade); leaked 0/5; re-id 0; $0.040
+EMAIL-01 RG: quality to grade (pre-check ok; needs a blind grade); leaked 0/5; re-id 0; $0.008
+EMAIL-01 L: quality to grade (pre-check ok; needs a blind grade); leaked 0/5; re-id 0; $0.000
+EMAIL-02 C0: quality to grade (pre-check ok; needs a blind grade); leaked 5/5; re-id 0; $0.021
+EMAIL-02 R: quality to grade (pre-check ok; needs a blind grade); leaked 3/5; re-id 0; $0.042
+EMAIL-02 G: quality to grade (pre-check ok; needs a blind grade); leaked 0/5; re-id 0; $0.041
+EMAIL-02 RG: quality to grade (pre-check ok; needs a blind grade); leaked 0/5; re-id 0; $0.042
+EMAIL-02 L: quality fail (key point missing); leaked 0/5; re-id 0; $0.000
+EMAIL-03 C0: quality to grade (pre-check ok; needs a blind grade); leaked 3/3; re-id 0; $0.020
+EMAIL-03 R: quality to grade (pre-check ok; needs a blind grade); leaked 2/3; re-id 0; $0.039
+EMAIL-03 G: quality to grade (pre-check ok; needs a blind grade); leaked 0/3; re-id 0; $0.038
+EMAIL-03 RG: quality to grade (pre-check ok; needs a blind grade); leaked 0/3; re-id 0; $0.005
+EMAIL-03 L: quality to grade (pre-check ok; needs a blind grade); leaked 0/3; re-id 0; $0.000
+EMAIL-04 C0: quality to grade (pre-check ok; needs a blind grade); leaked 3/3; re-id 0; $0.020
+EMAIL-04 R: quality to grade (pre-check ok; needs a blind grade); leaked 2/3; re-id 0; $0.038
+EMAIL-04 G: quality to grade (pre-check ok; needs a blind grade); leaked 0/3; re-id 0; $0.037
+EMAIL-04 RG: quality to grade (pre-check ok; needs a blind grade); leaked 0/3; re-id 0; $0.006
+EMAIL-04 L: quality to grade (pre-check ok; needs a blind grade); leaked 0/3; re-id 0; $0.000
+EMAIL-05 C0: quality to grade (pre-check ok; needs a blind grade); leaked 3/3; re-id 0; $0.020
+EMAIL-05 R: quality to grade (pre-check ok; needs a blind grade); leaked 2/3; re-id 0; $0.040
+EMAIL-05 G: quality to grade (pre-check ok; needs a blind grade); leaked 0/3; re-id 0; $0.038
+EMAIL-05 RG: quality to grade (pre-check ok; needs a blind grade); leaked 0/3; re-id 0; $0.007
+EMAIL-05 L: quality to grade (pre-check ok; needs a blind grade); leaked 0/3; re-id 0; $0.000
+EMAIL-06 C0: quality to grade (pre-check ok; needs a blind grade); leaked 3/3; re-id 0; $0.018
+EMAIL-06 R: quality to grade (pre-check ok; needs a blind grade); leaked 2/3; re-id 0; $0.040
+EMAIL-06 G: quality to grade (pre-check ok; needs a blind grade); leaked 0/3; re-id 0; $0.039
+EMAIL-06 RG: quality to grade (pre-check ok; needs a blind grade); leaked 0/3; re-id 0; $0.007
+EMAIL-06 L: quality fail (key point missing); leaked 0/3; re-id 0; $0.000
+EMAIL-07 C0: quality to grade (pre-check ok; needs a blind grade); leaked 4/4; re-id 0; $0.020
+EMAIL-07 R: quality to grade (pre-check ok; needs a blind grade); leaked 2/4; re-id 0; $0.039
+EMAIL-07 G: quality to grade (pre-check ok; needs a blind grade); leaked 0/4; re-id 0; $0.040
+EMAIL-07 RG: quality to grade (pre-check ok; needs a blind grade); leaked 0/4; re-id 0; $0.040
+EMAIL-07 L: quality to grade (pre-check ok; needs a blind grade); leaked 0/4; re-id 0; $0.000
+EMAIL-08 C0: quality to grade (pre-check ok; needs a blind grade); leaked 3/3; re-id 0; $0.020
+EMAIL-08 R: quality to grade (pre-check ok; needs a blind grade); leaked 2/3; re-id 0; $0.041
+EMAIL-08 G: quality to grade (pre-check ok; needs a blind grade); leaked 0/3; re-id 0; $0.040
+EMAIL-08 RG: quality to grade (pre-check ok; needs a blind grade); leaked 0/3; re-id 0; $0.008
+EMAIL-08 L: quality to grade (pre-check ok; needs a blind grade); leaked 0/3; re-id 0; $0.000
+NOTES-01 C0: quality to grade (pre-check ok; needs a blind grade); leaked 9/9; re-id 0; $0.023
+NOTES-01 R: quality to grade (pre-check ok; needs a blind grade); leaked 6/9; re-id 0; $0.045
+NOTES-01 G: quality to grade (pre-check ok; needs a blind grade); leaked 0/9; re-id 0; $0.043
+NOTES-01 RG: quality to grade (pre-check ok; needs a blind grade); leaked 0/9; re-id 0; $0.010
+NOTES-01 L: quality to grade (pre-check ok; needs a blind grade); leaked 0/9; re-id 0; $0.000
+NOTES-02 C0: quality to grade (pre-check ok; needs a blind grade); leaked 9/9; re-id 0; $0.023
+NOTES-02 R: quality to grade (pre-check ok; needs a blind grade); leaked 6/9; re-id 0; $0.045
+NOTES-02 G: quality to grade (pre-check ok; needs a blind grade); leaked 0/9; re-id 0; $0.045
+NOTES-02 RG: quality to grade (pre-check ok; needs a blind grade); leaked 0/9; re-id 0; $0.014
+NOTES-02 L: quality to grade (pre-check ok; needs a blind grade); leaked 0/9; re-id 0; $0.000
+NOTES-03 C0: quality to grade (pre-check ok; needs a blind grade); leaked 9/9; re-id 0; $0.022
+NOTES-03 R: quality to grade (pre-check ok; needs a blind grade); leaked 6/9; re-id 0; $0.043
+NOTES-03 G: quality to grade (pre-check ok; needs a blind grade); leaked 0/9; re-id 0; $0.047
+NOTES-03 RG: quality to grade (pre-check ok; needs a blind grade); leaked 0/9; re-id 0; $0.012
+NOTES-03 L: quality to grade (pre-check ok; needs a blind grade); leaked 0/9; re-id 0; $0.000
+NOTES-04 C0: quality to grade (pre-check ok; needs a blind grade); leaked 9/9; re-id 0; $0.022
+NOTES-04 R: quality to grade (pre-check ok; needs a blind grade); leaked 6/9; re-id 0; $0.044
+NOTES-04 G: quality to grade (pre-check ok; needs a blind grade); leaked 0/9; re-id 0; $0.048
+NOTES-04 RG: quality to grade (pre-check ok; needs a blind grade); leaked 0/9; re-id 0; $0.013
+NOTES-04 L: quality to grade (pre-check ok; needs a blind grade); leaked 0/9; re-id 0; $0.000
+NOTES-05 C0: quality to grade (pre-check ok; needs a blind grade); leaked 9/9; re-id 0; $0.021
+NOTES-05 R: quality to grade (pre-check ok; needs a blind grade); leaked 6/9; re-id 0; $0.048
+NOTES-05 G: quality to grade (pre-check ok; needs a blind grade); leaked 0/9; re-id 0; $0.045
+NOTES-05 RG: quality to grade (pre-check ok; needs a blind grade); leaked 0/9; re-id 0; $0.014
+NOTES-05 L: quality to grade (pre-check ok; needs a blind grade); leaked 0/9; re-id 0; $0.000
+NOTES-06 C0: quality to grade (pre-check ok; needs a blind grade); leaked 9/9; re-id 0; $0.022
+NOTES-06 R: quality to grade (pre-check ok; needs a blind grade); leaked 6/9; re-id 0; $0.044
+NOTES-06 G: quality to grade (pre-check ok; needs a blind grade); leaked 0/9; re-id 0; $0.044
+NOTES-06 RG: quality to grade (pre-check ok; needs a blind grade); leaked 0/9; re-id 0; $0.015
+NOTES-06 L: quality to grade (pre-check ok; needs a blind grade); leaked 0/9; re-id 0; $0.000

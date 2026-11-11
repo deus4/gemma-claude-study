@@ -9,6 +9,7 @@ Nothing here has been built or tested.
 | Tier | Where the gate runs | Realistic model | Example |
 |---|---|---|---|
 | Device | microcontroller (e.g. ESP32) | no LLM: rules + a tiny classifier (TinyML) | a smart scale, a thermostat, a food-chain sensor |
+| Robot / drone | onboard computer next to the sensors | small model on the companion computer | camera, sonar and telemetry from a ground robot, drone or surface vessel |
 | Gateway / home hub | single-board computer, router, hub | small language model (1–4B) | a bar's iPad or hub, a home hub |
 | Personal | laptop | Gemma 4 12B (this study) | one professional's own work |
 | Business | on-premises or EU-hosted servers | large open-weight model, e.g. Mistral Large 4 | a company's private "first reader" |
@@ -25,6 +26,8 @@ The rule at every tier stays the same as in the study: a model **suggests** what
 - Questions to test: how small can the gate model be before leakage rises sharply? What is the
   energy and latency cost per message? Can the gateway also check what comes **back** from the cloud
   (prompt injection, unsafe commands to actuators)?
+- Robots and drones are IoT too: their sensors (cameras, sonar, telemetry) produce the most sensitive data
+  and often work with weak or jammed links, so deciding on board what may leave matters even more.
 - Starting point from the author's own work: Getti's Bluetooth scales (ESP32) and iPad app, where the
   gateway already exists.
 
