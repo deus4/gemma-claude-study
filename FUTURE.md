@@ -31,6 +31,21 @@ The rule at every tier stays the same as in the study: a model **suggests** what
 - Starting point from the author's own work: Getti's Bluetooth scales (ESP32) and iPad app, where the
   gateway already exists.
 
+## 2b. Gate size: other Gemma 4 models (hypotheses, not tested)
+The study used only Gemma 4 12B, the largest that runs well on the author's laptop (M2 Pro, 16 GB). Gemma 4
+also comes in four core sizes, which map onto the tiers above:
+| Model | Fits | Hypothesis |
+|---|---|---|
+| E2B | phone, hub, robot companion computer | catches pattern-like personal data with rules; misses more names and almost all know-how |
+| E4B | hub, gateway, tablet | close to 12B on personal data; weaker on client names and know-how |
+| 26B A4B (mixture of experts) | workstation, small office server | fewer know-how leaks than 12B at similar speed |
+| 31B (dense) | workstation, office server | the best of the family as a gate; still misses know-how written as code identifiers |
+- Test: the same 30 tasks, arms G and RG with each model as the gate; the curve of leakage against model
+  size, and time per task, answers "how small can the gate be" for each tier.
+- Expectation from v1: rules stay necessary at every size (they catch what models miss, e.g. e-mails), and
+  know-how in code is the hardest case for every size. Fixing it may need a code-aware step (marking
+  identifiers defined near secret constants) rather than a bigger model.
+
 ## 3. Up: businesses, EU-hosted
 - Mistral Large 4 (open weights since 29 Oct 2026, ~1T parameters, mixture of experts) needs a multi-GPU
   server, so it fits a company or an EU host, not a laptop. Its licence has conditions for hosting it as a
