@@ -18,3 +18,5 @@ same rows on SQLite), 8 support e-mails and 6 meeting notes (pre-check + blind g
 `tasks/*.json` and `results/` hold private project code: git-ignored, never published without owner approval.
 Still to build: the gates (rules, Gemma, rules+Gemma) with placeholder mapping, the re-identification probe,
 `grade.js` (blind grading), `report.js`.
+
+Possible next steps (IoT edge gates, EU-hosted business gates with Mistral Large 4): see `FUTURE.md`.
