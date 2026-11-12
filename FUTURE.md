@@ -53,6 +53,26 @@ also comes in four core sizes, which map onto the tiers above:
 - Question to test: does a much larger local gate close the gaps a 12B model leaves (know-how, indirect
   identifiers), and is the cost worth it compared with rules + a small model?
 
+## 3b. Verifiable gates: zero-knowledge principles (hypotheses, not tested)
+Zero-knowledge (ZK) proofs show that a statement about secret data is true without revealing the data.
+They do **not** let a cloud model work on data it cannot see (that would need homomorphic encryption,
+multi-party computation or a trusted execution environment), and they do not stop inference from what is
+sent. Where they could help is **proving the gate did its job**:
+- **Commitments to the placeholder map (cheap, buildable now):** before sending, the gate publishes a hash
+  commitment (e.g. a Merkle root) of every `placeholder → value` pair. Later, for an audit or a dispute,
+  one pair can be revealed and checked against the root without revealing the others. Gives a tamper-
+  evident record of what was hidden and what was sent.
+- **Proof that the rules ran (feasible with a zkVM):** the device proves "the sent text is the output of
+  redaction policy P applied to some input", without showing the input. Realistic for the pattern rules;
+  useful for IoT devices and for GDPR accountability (Art. 5(2): being able to *demonstrate* compliance).
+- **Proof that the model gate ran (not practical yet):** proving the inference of a 12B model in ZK is far
+  too expensive today; small classifiers on devices may become provable first.
+- **Send proofs instead of attributes (data minimisation):** when the cloud only needs a fact ("this person
+  is over 18", "this employee belongs to venue X"), send a ZK proof of the fact, not the personal data; the
+  same idea as selective disclosure in the EU Digital Identity Wallet.
+- Limit: a proof shows the policy ran, not that the policy is good. Leakage and re-identification still
+  have to be measured, as in this study.
+
 ## 4. Why the EU is the natural place for this
 Not legal advice; dates to verify before citing.
 - **GDPR:** pseudonymisation (Art. 4(5), 25, 32) and the 2025 CJEU ruling EDPS v SRB, under which
