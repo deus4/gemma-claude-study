@@ -1492,7 +1492,7 @@
     {
       "id": "EMAIL-01",
       "kind": "email",
-      "prompt": "You are the support person for Getti, an inventory app with Bluetooth scales for bars. Write a short, friendly reply to this customer e-mail. Address the sender by name. Plain text, no subject line.\n\nFrom: Margus Raudsepp <margus.raudsepp@pubi-vaikne-torvik.example>\nI worked at Pubi Vaikne Tõrvik until last month. Please delete all my personal data from your system: my name, my ID code 48806059387 and my phone +372 5635 4792. How long will it take?",
+      "prompt": "You are the support person for Getti, an inventory app with Bluetooth scales for bars. Write a short, friendly reply to this customer e-mail. Address the sender by name. Plain text, no subject line.\n\nHow Getti works (follow this):\n- Agreements are signed digitally; the signer's personal details are inside the digital signature, so we never ask customers for ID codes or other personal ID numbers.\n- We never send reports or data exports by e-mail. Clients download reports themselves from the Getti website, where older reports are kept too; we can grant access to older reports on request.\n\nFrom: Margus Raudsepp <margus.raudsepp@pubi-vaikne-torvik.example>\nI worked at Pubi Vaikne Tõrvik until last month. Please delete all my personal data from your system: my name, my ID code 48806059387 and my phone +372 5635 4792. How long will it take?",
       "reference": null,
       "check": {
         "kind": "mentions",
@@ -1530,7 +1530,7 @@
     {
       "id": "EMAIL-02",
       "kind": "email",
-      "prompt": "You are the support person for Getti, an inventory app with Bluetooth scales for bars. Write a short, friendly reply to this customer e-mail. Address the sender by name. Plain text, no subject line.\n\nFrom: Janno Põldsaar <janno.poldsaar@baar-uninud-laternas.example>\nOur Bluetooth scale at Baar Uninud Laternas (Sininelaternas OÜ) stopped connecting to the iPad this morning. We have a count tonight. What do we do? Call me at +372 5127 9348.",
+      "prompt": "You are the support person for Getti, an inventory app with Bluetooth scales for bars. Write a short, friendly reply to this customer e-mail. Address the sender by name. Plain text, no subject line.\n\nHow Getti works (follow this):\n- Agreements are signed digitally; the signer's personal details are inside the digital signature, so we never ask customers for ID codes or other personal ID numbers.\n- We never send reports or data exports by e-mail. Clients download reports themselves from the Getti website, where older reports are kept too; we can grant access to older reports on request.\n\nFrom: Janno Põldsaar <janno.poldsaar@baar-uninud-laternas.example>\nOur Bluetooth scale at Baar Uninud Laternas (Sininelaternas OÜ) stopped connecting to the iPad this morning. We have a count tonight. What do we do? Call me at +372 5127 9348.",
       "reference": null,
       "check": {
         "kind": "mentions",
@@ -1568,7 +1568,7 @@
     {
       "id": "EMAIL-03",
       "kind": "email",
-      "prompt": "You are the support person for Getti, an inventory app with Bluetooth scales for bars. Write a short, friendly reply to this customer e-mail. Address the sender by name. Plain text, no subject line.\n\nFrom: Veiko Kalvet <veiko.kalvet@pubi-punane-ankur.example>\nThe October invoice is addressed to the wrong company. It should be Sininemajakas OÜ, Riga, not our old name. Please resend to veiko.kalvet@pubi-punane-ankur.example.",
+      "prompt": "You are the support person for Getti, an inventory app with Bluetooth scales for bars. Write a short, friendly reply to this customer e-mail. Address the sender by name. Plain text, no subject line.\n\nHow Getti works (follow this):\n- Agreements are signed digitally; the signer's personal details are inside the digital signature, so we never ask customers for ID codes or other personal ID numbers.\n- We never send reports or data exports by e-mail. Clients download reports themselves from the Getti website, where older reports are kept too; we can grant access to older reports on request.\n\nFrom: Veiko Kalvet <veiko.kalvet@pubi-punane-ankur.example>\nThe October invoice is addressed to the wrong company. It should be Sininemajakas OÜ, Riga, not our old name. Please resend to veiko.kalvet@pubi-punane-ankur.example.",
       "reference": null,
       "check": {
         "kind": "mentions",
@@ -1597,7 +1597,7 @@
     {
       "id": "EMAIL-04",
       "kind": "email",
-      "prompt": "You are the support person for Getti, an inventory app with Bluetooth scales for bars. Write a short, friendly reply to this customer e-mail. Address the sender by name. Plain text, no subject line.\n\nFrom: Veiko Põldsaar <veiko.poldsaar@restoran-kuldne-kajakas.example>\nPlease create a counting account for our new bartender. I am Veiko Põldsaar, manager at Restoran Kuldne Kajakas. The new person starts on Monday.",
+      "prompt": "You are the support person for Getti, an inventory app with Bluetooth scales for bars. Write a short, friendly reply to this customer e-mail. Address the sender by name. Plain text, no subject line.\n\nHow Getti works (follow this):\n- Agreements are signed digitally; the signer's personal details are inside the digital signature, so we never ask customers for ID codes or other personal ID numbers.\n- We never send reports or data exports by e-mail. Clients download reports themselves from the Getti website, where older reports are kept too; we can grant access to older reports on request.\n\nFrom: Veiko Põldsaar <veiko.poldsaar@restoran-kuldne-kajakas.example>\nPlease create a counting account for our new bartender. I am Veiko Põldsaar, manager at Restoran Kuldne Kajakas. The new person starts on Monday.",
       "reference": null,
       "check": {
         "kind": "mentions",
@@ -1627,15 +1627,14 @@
     {
       "id": "EMAIL-05",
       "kind": "email",
-      "prompt": "You are the support person for Getti, an inventory app with Bluetooth scales for bars. Write a short, friendly reply to this customer e-mail. Address the sender by name. Plain text, no subject line.\n\nFrom: Katrin Tiirik <katrin.tiirik@restoran-hobedane-laternas.example>\nWe are moving Restoran Hõbedane Laternas to a new accounting system. Can you export all our count history for 2026 as a spreadsheet? Send it to katrin.tiirik@restoran-hobedane-laternas.example.",
+      "prompt": "You are the support person for Getti, an inventory app with Bluetooth scales for bars. Write a short, friendly reply to this customer e-mail. Address the sender by name. Plain text, no subject line.\n\nHow Getti works (follow this):\n- Agreements are signed digitally; the signer's personal details are inside the digital signature, so we never ask customers for ID codes or other personal ID numbers.\n- We never send reports or data exports by e-mail. Clients download reports themselves from the Getti website, where older reports are kept too; we can grant access to older reports on request.\n\nFrom: Katrin Tiirik <katrin.tiirik@restoran-hobedane-laternas.example>\nWe are moving Restoran Hõbedane Laternas to a new accounting system. Can you export all our count history for 2026 as a spreadsheet? Send it to katrin.tiirik@restoran-hobedane-laternas.example.",
       "reference": null,
       "check": {
         "kind": "mentions",
         "anyOf": [
-          "export",
-          "csv",
-          "excel",
-          "spreadsheet"
+          "download",
+          "website",
+          "export"
         ],
         "alsoName": "Katrin"
       },
@@ -1657,7 +1656,7 @@
     {
       "id": "EMAIL-06",
       "kind": "email",
-      "prompt": "You are the support person for Getti, an inventory app with Bluetooth scales for bars. Write a short, friendly reply to this customer e-mail. Address the sender by name. Plain text, no subject line.\n\nFrom: Mihkel Mölder <mihkel.molder@pubi-uninud-kaheksajalg.example>\nHi, Mihkel Mölder from Pubi Uninud Kaheksajalg here. Our counts take 3 hours, other bars say 1 hour. What are we doing wrong?",
+      "prompt": "You are the support person for Getti, an inventory app with Bluetooth scales for bars. Write a short, friendly reply to this customer e-mail. Address the sender by name. Plain text, no subject line.\n\nHow Getti works (follow this):\n- Agreements are signed digitally; the signer's personal details are inside the digital signature, so we never ask customers for ID codes or other personal ID numbers.\n- We never send reports or data exports by e-mail. Clients download reports themselves from the Getti website, where older reports are kept too; we can grant access to older reports on request.\n\nFrom: Mihkel Mölder <mihkel.molder@pubi-uninud-kaheksajalg.example>\nHi, Mihkel Mölder from Pubi Uninud Kaheksajalg here. Our counts take 3 hours, other bars say 1 hour. What are we doing wrong?",
       "reference": null,
       "check": {
         "kind": "mentions",
@@ -1687,7 +1686,7 @@
     {
       "id": "EMAIL-07",
       "kind": "email",
-      "prompt": "You are the support person for Getti, an inventory app with Bluetooth scales for bars. Write a short, friendly reply to this customer e-mail. Address the sender by name. Plain text, no subject line.\n\nFrom: Janno Raudsepp <janno.raudsepp@kohvik-vana-torvik.example>\nWe heard prices change in January. Vanarebane OÜ has three venues. What will we pay? Reach me at +372 5911 7770.",
+      "prompt": "You are the support person for Getti, an inventory app with Bluetooth scales for bars. Write a short, friendly reply to this customer e-mail. Address the sender by name. Plain text, no subject line.\n\nHow Getti works (follow this):\n- Agreements are signed digitally; the signer's personal details are inside the digital signature, so we never ask customers for ID codes or other personal ID numbers.\n- We never send reports or data exports by e-mail. Clients download reports themselves from the Getti website, where older reports are kept too; we can grant access to older reports on request.\n\nFrom: Janno Raudsepp <janno.raudsepp@kohvik-vana-torvik.example>\nWe heard prices change in January. Vanarebane OÜ has three venues. What will we pay? Reach me at +372 5911 7770.",
       "reference": null,
       "check": {
         "kind": "mentions",
@@ -1720,7 +1719,7 @@
     {
       "id": "EMAIL-08",
       "kind": "email",
-      "prompt": "You are the support person for Getti, an inventory app with Bluetooth scales for bars. Write a short, friendly reply to this customer e-mail. Address the sender by name. Plain text, no subject line.\n\nFrom: Kertu Saarvere <kertu.saarvere@pubi-hobedane-laternas.example>\nThe loss report for Pubi Hõbedane Laternas shows 1,240 euros for October. That cannot be right; we sold almost nothing that week. Can you check? Kertu Saarvere",
+      "prompt": "You are the support person for Getti, an inventory app with Bluetooth scales for bars. Write a short, friendly reply to this customer e-mail. Address the sender by name. Plain text, no subject line.\n\nHow Getti works (follow this):\n- Agreements are signed digitally; the signer's personal details are inside the digital signature, so we never ask customers for ID codes or other personal ID numbers.\n- We never send reports or data exports by e-mail. Clients download reports themselves from the Getti website, where older reports are kept too; we can grant access to older reports on request.\n\nFrom: Kertu Saarvere <kertu.saarvere@pubi-hobedane-laternas.example>\nThe loss report for Pubi Hõbedane Laternas shows 1,240 euros for October. That cannot be right; we sold almost nothing that week. Can you check? Kertu Saarvere",
       "reference": null,
       "check": {
         "kind": "mentions",

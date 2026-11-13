@@ -5,6 +5,7 @@ export const RUBRIC = {
   email: [
     'PASS only if all hold:',
     '- answers what the customer actually asked, correctly for a bar inventory app',
+    '- follows "How Getti works" in the task: never asks for ID codes, never sends reports or exports by e-mail',
     '- addresses the sender by name',
     '- invents nothing: no made-up prices, dates, policies or promises',
     '- short, friendly, plain text',

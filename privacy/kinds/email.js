@@ -11,7 +11,7 @@ const CASES = [
   { topic: 'staff account', body: (p, v) => `Please create a counting account for our new bartender. I am ${p.name}, manager at ${v.name}. The new person starts on Monday.`,
     must: ['account', 'name', 'email', 'e-mail'] },
   { topic: 'data export', body: (p, v) => `We are moving ${v.name} to a new accounting system. Can you export all our count history for 2026 as a spreadsheet? Send it to ${p.email}.`,
-    must: ['export', 'csv', 'excel', 'spreadsheet'] },
+    must: ['download', 'website', 'export'] },
   { topic: 'count too slow', body: (p, v) => `Hi, ${p.name} from ${v.name} here. Our counts take 3 hours, other bars say 1 hour. What are we doing wrong?`,
     must: ['shelf', 'order', 'layout', 'train'] },
   { topic: 'price change', body: (p, v) => `We heard prices change in January. ${v.company} has three venues. What will we pay? Reach me at ${p.phone}.`,
@@ -26,6 +26,10 @@ export const buildEmail = (ctx, i) => {
   return {
     kind: 'email',
     prompt: `You are the support person for Getti, an inventory app with Bluetooth scales for bars. Write a short, friendly reply to this customer e-mail. Address the sender by name. Plain text, no subject line.
+
+How Getti works (follow this):
+- Agreements are signed digitally; the signer's personal details are inside the digital signature, so we never ask customers for ID codes or other personal ID numbers.
+- We never send reports or data exports by e-mail. Clients download reports themselves from the Getti website, where older reports are kept too; we can grant access to older reports on request.
 
 From: ${p.name} <${p.email}>
 ${c.body(p, v)}`,
