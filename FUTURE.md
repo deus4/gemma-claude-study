@@ -55,9 +55,9 @@ also comes in four core sizes, which map onto the tiers above:
 
 ## 3b. Verifiable gates: zero-knowledge principles (hypotheses, not tested)
 Zero-knowledge (ZK) proofs show that a statement about secret data is true without revealing the data.
-They do **not** let a cloud model work on data it cannot see (that would need homomorphic encryption,
-multi-party computation or a trusted execution environment), and they do not stop inference from what is
-sent. Where they could help is **proving the gate did its job**:
+They do **not** let a cloud model work on data it cannot see (only homomorphic encryption or multi-party
+computation hide data from the computation itself; a trusted execution environment hides it from the
+operator, not from the model, see 3c), and they do not stop inference from what is sent. Where they could help is **proving the gate did its job**:
 - **Commitments to the placeholder map (cheap, buildable now):** before sending, the gate publishes a hash
   commitment (e.g. a Merkle root) of every `placeholder → value` pair. Later, for an audit or a dispute,
   one pair can be revealed and checked against the root without revealing the others. Gives a tamper-
@@ -72,6 +72,39 @@ sent. Where they could help is **proving the gate did its job**:
   same idea as selective disclosure in the EU Digital Identity Wallet.
 - Limit: a proof shows the policy ran, not that the policy is good. Leakage and re-identification still
   have to be measured, as in this study.
+
+## 3c. Confidential hardware: TEEs on GPUs and TPUs (hypotheses, not tested)
+Researched 2026-11-13; sources in the author's notes, dates to recheck before citing.
+- **What exists:** confidential computing on NVIDIA Hopper and Blackwell GPUs (Azure, Google Cloud;
+  Blackwell overhead reported by NVIDIA at about 1 to 8 %), Apple Private Cloud Compute, Google Private AI
+  Compute. Google announced a confidential TPU system (TPU 8tx) on 9 Nov 2026; no attestation method, audit
+  or availability date was published, so its claims cannot be checked yet.
+- **Claude:** no confidential (TEE) inference is offered on any surface as of 13 Nov 2026. Anthropic has
+  published research on it (June 2025) and licensed confidential-AI technology (Oct 2026); no product.
+- **A TEE and a gate cover different threats; they complement each other:**
+  | Threat | Local gate | TEE |
+  |---|---|---|
+  | operator or insider reads prompts | yes, for redacted items | yes, if attestation is sound |
+  | provider retention, logs, legal requests | yes, the provider never had the secret | no, or untested |
+  | the model infers or re-identifies from what it sees | partly | no |
+  | know-how in code identifiers | weak (the main leak in v1) | yes, while in use |
+  | quality loss from placeholders | possible | none |
+- **Limits of trust in hardware:** physical attacks on memory (TEE.fail 2025, DDRop 2026) forged
+  attestation on Intel TDX and broke AMD SEV-SNP integrity; vendors treat physical attacks as out of scope.
+  A TEE moves trust to the chip vendor and the operator's data centre.
+- **Law:** a TEE is a security measure (GDPR Art. 32), not a way out of transfer rules (Chapter V); no EDPB
+  guidance on TEEs was found. Redaction is data minimisation (Art. 5(1)(c), 25), which a TEE is not.
+- **Hypotheses to test later:**
+  1. Gate + confidential inference leaves less residual risk than either alone (an open model on a
+     confidential GPU vs Claude behind the gate, same canaries).
+  2. Report leakage three ways: seen by the model, stored by the provider, readable by the operator. A TEE
+     changes only the third.
+  3. Accountability bundle (Art. 5(2)): gate log + commitment to the placeholder map (3b) + the server's
+     attestation report: what was hidden, which code ran, on which hardware.
+  4. For high-value code know-how, an open model in a TEE or on-premises may beat gate + frontier model.
+- **Tier note:** a "confidential cloud" tier sits between Business and Frontier in the table in section 1.
+  On laptops, Gemma 4 26B (14.4 GB at 4-bit) and 31B (17.5 GB) need more than 16 GB; a 32 to 64 GB machine
+  runs both.
 
 ## 4. Why the EU is the natural place for this
 Not legal advice; dates to verify before citing.
