@@ -12,6 +12,13 @@ test('redact and restore are exact inverses', () => {
   assert.equal(restore(r, map), text);
 });
 
+test('a value inside an identifier is masked and restored (run 1 left METHOD_2Correction in two answers)', () => {
+  const text = 'export const saulaCorrection = (g) => g * 0.9688; // Saula curve';
+  const { text: r, map } = redact(text, [{ text: 'saula', type: 'knowhow' }, { text: '0.9688', type: 'knowhow' }]);
+  assert.ok(!r.includes('saula') && r.includes('Correction'));
+  assert.equal(restore(r, map), text);
+});
+
 test('PERSON_12 is restored before PERSON_1', () => {
   const map = Array.from({ length: 12 }, (_, i) => ({ placeholder: `PERSON_${i + 1}`, value: `p${i + 1}` }));
   assert.equal(restore('PERSON_12 and PERSON_1', map), 'p12 and p1');
@@ -30,4 +37,18 @@ test('rules gate removes e-mails, ID codes, phones and keys; reference code stil
       assert.equal((await qualityCheck(t, roundTrip)).quality, 'pass', t.id);
     }
   }
+});
+
+test('code check: a correct fix that rewrites the API key or renames an export fails; a fix that only passes the visible asserts fails', async () => {
+  const { tasks } = JSON.parse(await readFile(new URL('./tasks.json', import.meta.url), 'utf8'));
+  const first = tasks.find((t) => t.id === 'CODE-01');
+  assert.equal((await qualityCheck(first, first.reference.replace(/gtk_live_\w+/, 'gtk_live_REDACTED'))).quality, 'fail');
+  assert.equal((await qualityCheck(first, first.reference.replace(/export const \w+Correction/, 'export const METHOD_2Correction'))).quality, 'fail');
+  const rounding = tasks.find((t) => t.id === 'CODE-07');
+  assert.equal((await qualityCheck(rounding, rounding.reference.replace('Math.round', 'Math.ceil'))).quality, 'fail');
+});
+
+test('rules win over the model on the type of a span', () => {
+  const spans = [{ text: 'a@b.example', type: 'personal' }, { text: 'a@b.example', type: 'email' }];
+  assert.equal(redact('write to a@b.example', spans).text, 'write to EMAIL_1');
 });

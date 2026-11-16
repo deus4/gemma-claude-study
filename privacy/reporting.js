@@ -14,6 +14,7 @@ export const finalQuality = (run, gradesByKey) => {
 };
 
 const pct = (a, b) => (b ? (100 * a) / b : 0);
+const median = (values) => [...values].sort((a, b) => a - b)[Math.floor(values.length / 2)] ?? 0;
 const count = (list, key) => list.reduce((acc, x) => ({ ...acc, [x[key]]: (acc[x[key]] ?? 0) + 1 }), {});
 
 export const summarise = (runs, grades, tasks) => {
@@ -46,7 +47,9 @@ export const summarise = (runs, grades, tasks) => {
       pass: known.filter((q) => q.grade === 'pass').length, known: known.length, pending: quality.length - known.length,
       failures: count(quality.filter((q) => q.grade === 'fail'), 'failure'),
       quality, byKind, costUsd: rs.reduce((s, r) => s + (r.costUsd ?? 0), 0),
-      medianMs: [...rs.map((r) => r.ms)].sort((a, b) => a - b)[Math.floor(rs.length / 2)] ?? 0,
+      probeCostUsd: rs.reduce((s, r) => s + (r.probeCostUsd ?? 0), 0),
+      medianMs: median(rs.map((r) => r.ms)), medianGateMs: median(rs.map((r) => r.gateMs ?? 0)),
+      spans: rs.reduce((s, r) => s + (r.spans ?? 0), 0),
       leakedValues: count(leaked.map((c) => ({ v: `${c.type}: ${c.value}` })), 'v'),
     };
   });
@@ -69,8 +72,8 @@ export const toMarkdown = (summary, meta) => {
   const row = (cells) => lines.push(`| ${cells.join(' | ')} |`);
   const c0 = summary.find((s) => s.arm === 'C0');
   lines.push(`# Results: local privacy gate before a cloud model`, '',
-    `Generated ${meta.at} from \`privacy/out/runs.jsonl\` and \`grades.jsonl\`. Task set seed ${meta.seed}: ${meta.tasks} synthetic tasks, ${meta.canaries} canaries.`,
-    meta.pending ? `**${meta.pending} results still wait for a blind grade; quality numbers are partial.**` : 'All results graded.', '');
+    `Generated ${meta.at} from \`privacy/out/${meta.run}/runs.jsonl\` and \`grades.jsonl\`. Task set seed ${meta.seed}: ${meta.tasks} synthetic tasks, ${meta.canaries} canaries.`,
+    meta.pending ? `**${meta.pending} results have no human grade; quality numbers cover graded results only.**` : 'All results graded.', '');
 
   lines.push('## Headline', '');
   row(['Setup', 'Leaked', 'Tasks with any leak', 'Re-identified', 'Quality pass', 'Quality vs no gate', 'Claude cost']);
@@ -81,7 +84,7 @@ export const toMarkdown = (summary, meta) => {
       `${s.pass}/${s.known}${s.pending ? ` (+${s.pending} pending)` : ''}`, rel, `$${s.costUsd.toFixed(2)}`]);
   }
 
-  lines.push('', 'Claude cost for the gated setups includes the separate re-identification probe (a second call per task).',
+  lines.push('', 'Claude cost is for the answer call only; the re-identification probe (a second call per gated task) is not included.',
     'Quality vs no gate is computed only on tasks graded in both setups.');
   lines.push('', '## Leakage by type', '');
   row(['Setup', ...TYPES]); row(['---', ...TYPES.map(() => '---:')]);
@@ -110,6 +113,6 @@ export const toMarkdown = (summary, meta) => {
   }
 
   lines.push('', '## Time', '');
-  for (const s of summary) lines.push(`- ${ARM_NAME[s.arm]}: median ${f1(s.medianMs / 1000)} s per task`);
+  for (const s of summary) lines.push(`- ${ARM_NAME[s.arm]}: median ${f1(s.medianMs / 1000)} s per task (gate ${f1(s.medianGateMs / 1000)} s of that; the probe call is not included)`);
   return `${lines.join('\n')}\n`;
 };

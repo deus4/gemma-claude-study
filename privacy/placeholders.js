@@ -22,7 +22,9 @@ export const substitute = (text, map) => [...map]
   .sort((a, b) => b.value.length - a.value.length)
   .reduce((t, m) => t.replace(new RegExp(escape(m.value), 'g'), m.placeholder), text);
 
-// Longest placeholder first, so PERSON_12 is restored before PERSON_1.
+// Longest placeholder first, so PERSON_12 is restored before PERSON_1. No word boundaries: substitute()
+// replaces a value inside a longer word too (`saulaCorrection` → `METHOD_2Correction`), and restore must
+// undo exactly that. Run 1 required a boundary here and left such placeholders in two answers.
 export const restore = (text, map) => [...map]
   .sort((a, b) => b.placeholder.length - a.placeholder.length)
-  .reduce((t, m) => t.replace(new RegExp(`\\b${m.placeholder}\\b`, 'g'), m.value), text);
+  .reduce((t, m) => t.replaceAll(m.placeholder, m.value), text);

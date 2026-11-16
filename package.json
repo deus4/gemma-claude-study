@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Local Gemma 12B vs Claude on routine dev tasks. Protocol: GK_base wiki career/STUDY_gemma-claude.md",
+  "description": "A local model (Gemma 4 12B) as a privacy gate before a cloud model (Claude): leakage, quality and re-identification on synthetic tasks",
   "engines": { "node": ">=24" },
   "scripts": { "test": "node --test" }
 }

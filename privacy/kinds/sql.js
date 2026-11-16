@@ -18,7 +18,7 @@ const REQUESTS = [
     sql: (d) => `SELECT s.email FROM staff s JOIN venues v ON v.id = s.venue_id WHERE v.name = '${d.venues[0].name}'` },
   { ask: () => 'Counts that took more than 120 minutes: staff name, date and minutes.',
     sql: () => `SELECT s.name, c.counted_on, c.minutes FROM counts c JOIN staff s ON s.id = c.staff_id WHERE c.minutes > 120` },
-  { ask: () => 'Average count minutes before 2026-09-01 and from 2026-09-01 on: two rows, period label and average rounded to 1 decimal.',
+  { ask: () => 'Average count minutes before 2026-09-01 and from 2026-09-01 on: two rows, period label (the words before and after) and average rounded to 1 decimal.',
     sql: () => `SELECT CASE WHEN counted_on < '2026-09-01' THEN 'before' ELSE 'after' END AS period,
       ROUND(AVG(minutes), 1) AS avg_minutes FROM counts GROUP BY period` },
   { ask: (d) => `Phone numbers of staff who counted at ${d.venues[1].name} in 2026.`,

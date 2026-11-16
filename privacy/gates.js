@@ -33,17 +33,17 @@ ${text}
 const TYPES = new Set(['personal', 'client', 'secret', 'knowhow']);
 
 // G: Gemma lists spans; only spans that literally occur in the text are kept (a model can misquote).
+// Fails closed: if the reply is not a JSON list, this throws and nothing is sent.
 export const gemmaGate = async (text) => {
   const out = await callGemma(GEMMA_GATE(text));
-  try {
-    const list = JSON.parse(stripFences(out.text));
-    return list.filter((s) => typeof s?.text === 'string' && s.text.length > 1 && text.includes(s.text))
-      .map((s) => ({ text: s.text, type: TYPES.has(s.type) ? s.type : 'personal' }));
-  } catch {
-    return [];
-  }
+  const list = JSON.parse(stripFences(out.text));
+  if (!Array.isArray(list)) throw new Error('gate reply is not a list');
+  return list.filter((s) => typeof s?.text === 'string' && s.text.length > 1 && text.includes(s.text))
+    .map((s) => ({ text: s.text, type: TYPES.has(s.type) ? s.type : 'personal' }));
 };
 
-export const bothGate = async (text) => [...(await rulesGate(text)), ...(await gemmaGate(text))];
+// Rules last: redact() keeps the last span for a text, so a rule's exact type (EMAIL, IDCODE, PHONE) wins
+// over the model's broader one (PERSON).
+export const bothGate = async (text) => [...(await gemmaGate(text)), ...(await rulesGate(text))];
 
 export const GATES = { R: rulesGate, G: gemmaGate, RG: bothGate };

@@ -9,14 +9,23 @@ import { stripFences } from '../lib/checks.js';
 
 const run = promisify(execFile);
 
+// Passes only if the visible and hidden asserts pass AND every other line of the module is still there:
+// run 1 passed answers that had rewritten the API key or renamed an exported function.
 const codeTest = async (task, text) => {
+  const source = stripFences(text);
+  const lines = new Set(source.split('\n').map((line) => line.trim()));
+  const missing = (task.check.keep ?? []).filter((line) => !lines.has(line));
   const dir = await mkdtemp(join(tmpdir(), 'gcs-p-'));
   try {
     await writeFile(join(dir, 'package.json'), '{"type":"module"}');
-    await writeFile(join(dir, 'stock.js'), stripFences(text));
+    await writeFile(join(dir, 'stock.js'), source);
     await writeFile(join(dir, 'stock.test.js'), task.check.test);
-    await run(process.execPath, ['--test', '--test-reporter=tap', 'stock.test.js'], { cwd: dir, timeout: 60_000 });
-    return { quality: 'pass', note: 'tests pass' };
+    // Without NODE_TEST_CONTEXT, so the check also reports failures when it is itself called from a test.
+    const { NODE_TEST_CONTEXT, ...env } = process.env;
+    await run(process.execPath, ['--test', '--test-reporter=tap', 'stock.test.js'], { cwd: dir, timeout: 60_000, env });
+    return missing.length
+      ? { quality: 'fail', note: `tests pass, but ${missing.length} other line(s) changed` }
+      : { quality: 'pass', note: 'tests pass, nothing else changed' };
   } catch (err) {
     const failed = /# fail (\d+)/.exec(`${err.stdout ?? ''}`)?.[1];
     return { quality: 'fail', note: failed ? `${failed} test(s) fail` : 'does not run' };

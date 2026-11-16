@@ -2,32 +2,32 @@
 // canary that got through in pieces (a surname alone, a venue word inside an e-mail domain, a method's proper
 // name inside a function identifier). This lists every word of a canary that is still in the sent text
 // although the whole canary is not.
-// Usage: node privacy/partial.js [arms=G,RG]
-import { readFile } from 'node:fs/promises';
+// Usage: [RUN=run2] node privacy/partial.js [arms=G,RG]
 import { latestRuns } from './reporting.js';
+import { readJsonl, readTasks, runDir } from './paths.js';
 
 const MIN_LENGTH = 4;
 // Words the task templates share with every task; finding them in the sent text says nothing.
 const GENERIC = new Set(['example', 'restoran', 'baar', 'pubi', 'kohvik', 'live', 'foam', 'compensation',
   'curve', 'bottle', 'neck', 'correction', 'tare', 'drift']);
 
-const words = (value) => value.toLowerCase().split(/[^\p{L}\p{N}]+/u)
+const fold = (s) => s.toLowerCase().normalize('NFD').replace(/\p{M}/gu, '');
+
+const words = (value) => fold(value).split(/[^\p{L}\p{N}]+/u)
   .filter((w) => w.length >= MIN_LENGTH && !GENERIC.has(w));
 
 export const partialHits = (task, sent) => {
-  const text = sent.toLowerCase();
+  const text = fold(sent);
   const hits = task.canaries.filter((c) => !sent.includes(c.value))
     .flatMap((c) => words(c.value).filter((w) => text.includes(w)).map((w) => `${c.type}:${w}`));
   return [...new Set(hits)];
 };
 
-const readJsonl = async (url) => (await readFile(url, 'utf8')).split('\n').filter(Boolean).map((l) => JSON.parse(l));
-
 const main = async () => {
   const arms = (process.argv[2] ?? 'G,RG').split(',');
-  const { tasks } = JSON.parse(await readFile(new URL('./tasks.json', import.meta.url), 'utf8'));
+  const { tasks } = await readTasks();
   const byId = new Map(tasks.map((t) => [t.id, t]));
-  const runs = latestRuns(await readJsonl(new URL('./out/runs.jsonl', import.meta.url)));
+  const runs = latestRuns(await readJsonl(new URL('./runs.jsonl', runDir())));
   for (const arm of arms) {
     const rows = runs.filter((r) => r.arm === arm)
       .map((r) => [r.taskId, partialHits(byId.get(r.taskId), r.sent)]).filter(([, hits]) => hits.length);

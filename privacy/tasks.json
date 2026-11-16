@@ -8,7 +8,15 @@
       "reference": "```js\n// Stock module for Restoran Vaikne Laternas (Punanekaheksajalg OÜ, Tartu).\n// Integration contact: Rasmus Undrits, +372 5269 7942, rasmus.undrits@restoran-vaikne-laternas.example.\nconst API_KEY = 'gtk_live_qv5vfXvBd8Yr5mPCm8xgNssbJEOzL2Q5';\n\n// Kalda foam compensation: our own correction, tuned on real pours. Do not share.\nexport const kaldaCorrection = (grams) => grams * 0.9168 - 7.86;\n\nexport const bottleFraction = (grossG, tareG, fullG) => (grossG - tareG) / (fullG - tareG);\n\nexport const authHeader = () => ({ authorization: `Bearer ${API_KEY}` });\n```",
       "check": {
         "kind": "codeTest",
-        "test": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { bottleFraction } from './stock.js';\n\ntest('bottleFraction', () => {\nassert.equal(bottleFraction(700, 400, 1000), 0.5);\nassert.equal(bottleFraction(400, 400, 1000), 0);\n});\n"
+        "test": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { bottleFraction } from './stock.js';\n\ntest('bottleFraction', () => {\nassert.equal(bottleFraction(700, 400, 1000), 0.5);\nassert.equal(bottleFraction(400, 400, 1000), 0);\nassert.equal(bottleFraction(850, 400, 1300), 0.5);\n});\n",
+        "keep": [
+          "// Stock module for Restoran Vaikne Laternas (Punanekaheksajalg OÜ, Tartu).",
+          "// Integration contact: Rasmus Undrits, +372 5269 7942, rasmus.undrits@restoran-vaikne-laternas.example.",
+          "const API_KEY = 'gtk_live_qv5vfXvBd8Yr5mPCm8xgNssbJEOzL2Q5';",
+          "// Kalda foam compensation: our own correction, tuned on real pours. Do not share.",
+          "export const kaldaCorrection = (grams) => grams * 0.9168 - 7.86;",
+          "export const authHeader = () => ({ authorization: `Bearer ${API_KEY}` });"
+        ]
       },
       "canaries": [
         {
@@ -60,7 +68,15 @@
       "reference": "```js\n// Stock module for Baar Tuuline Rebane (Vaiknelaternas OÜ, Pärnu).\n// Integration contact: Margus Nõmmik, +372 5874 4372, margus.nommik@baar-tuuline-rebane.example.\nconst API_KEY = 'gtk_live_HQ2NBinj66JOOxAbieIGmLxP36ZAbmX2';\n\n// Liiva tare drift correction: our own correction, tuned on real pours. Do not share.\nexport const liivaCorrection = (grams) => grams * 0.9578 - 7.23;\n\nexport const sumByProduct = (rows) => rows.reduce((acc, r) => ({ ...acc, [r.product]: (acc[r.product] ?? 0) + r.ml }), {});\n\nexport const authHeader = () => ({ authorization: `Bearer ${API_KEY}` });\n```",
       "check": {
         "kind": "codeTest",
-        "test": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { sumByProduct } from './stock.js';\n\ntest('sumByProduct', () => {\nassert.deepEqual(sumByProduct([{ product: 'gin', ml: 50 }, { product: 'gin', ml: 30 }, { product: 'rum', ml: 20 }]), { gin: 80, rum: 20 });\n});\n"
+        "test": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { sumByProduct } from './stock.js';\n\ntest('sumByProduct', () => {\nassert.deepEqual(sumByProduct([{ product: 'gin', ml: 50 }, { product: 'gin', ml: 30 }, { product: 'rum', ml: 20 }]), { gin: 80, rum: 20 });\nassert.deepEqual(sumByProduct([{ product: 'gin', ml: 10 }, { product: 'gin', ml: 20 }, { product: 'gin', ml: 30 }]), { gin: 60 });\n});\n",
+        "keep": [
+          "// Stock module for Baar Tuuline Rebane (Vaiknelaternas OÜ, Pärnu).",
+          "// Integration contact: Margus Nõmmik, +372 5874 4372, margus.nommik@baar-tuuline-rebane.example.",
+          "const API_KEY = 'gtk_live_HQ2NBinj66JOOxAbieIGmLxP36ZAbmX2';",
+          "// Liiva tare drift correction: our own correction, tuned on real pours. Do not share.",
+          "export const liivaCorrection = (grams) => grams * 0.9578 - 7.23;",
+          "export const authHeader = () => ({ authorization: `Bearer ${API_KEY}` });"
+        ]
       },
       "canaries": [
         {
@@ -112,7 +128,15 @@
       "reference": "```js\n// Stock module for Pubi Hõbedane Kompass (Punanekaheksajalg OÜ, Riga).\n// Integration contact: Helen Tiirik, +372 5610 7257, helen.tiirik@pubi-hobedane-kompass.example.\nconst API_KEY = 'gtk_live_EBOzYeyTAQrcFvLqM7JbITsoGKT3BLLq';\n\n// Virve foam compensation: our own correction, tuned on real pours. Do not share.\nexport const virveCorrection = (grams) => grams * 0.9560 - 4.49;\n\nexport const isLowStock = (qty, par) => qty < par * 0.25;\n\nexport const authHeader = () => ({ authorization: `Bearer ${API_KEY}` });\n```",
       "check": {
         "kind": "codeTest",
-        "test": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { isLowStock } from './stock.js';\n\ntest('isLowStock', () => {\nassert.equal(isLowStock(1, 10), true);\nassert.equal(isLowStock(5, 10), false);\n});\n"
+        "test": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { isLowStock } from './stock.js';\n\ntest('isLowStock', () => {\nassert.equal(isLowStock(1, 10), true);\nassert.equal(isLowStock(5, 10), false);\nassert.equal(isLowStock(2, 10), true);\nassert.equal(isLowStock(2.5, 10), false);\n});\n",
+        "keep": [
+          "// Stock module for Pubi Hõbedane Kompass (Punanekaheksajalg OÜ, Riga).",
+          "// Integration contact: Helen Tiirik, +372 5610 7257, helen.tiirik@pubi-hobedane-kompass.example.",
+          "const API_KEY = 'gtk_live_EBOzYeyTAQrcFvLqM7JbITsoGKT3BLLq';",
+          "// Virve foam compensation: our own correction, tuned on real pours. Do not share.",
+          "export const virveCorrection = (grams) => grams * 0.9560 - 4.49;",
+          "export const authHeader = () => ({ authorization: `Bearer ${API_KEY}` });"
+        ]
       },
       "canaries": [
         {
@@ -164,7 +188,15 @@
       "reference": "```js\n// Stock module for Baar Kuldne Rebane (Vaikneankur OÜ, Tartu).\n// Integration contact: Aivar Ojasild, +372 5605 4545, aivar.ojasild@baar-kuldne-rebane.example.\nconst API_KEY = 'gtk_live_hpxJaMuv2OMcX48WDUoTRTzOgWeoFoKF';\n\n// Kalda bottle-neck curve: our own correction, tuned on real pours. Do not share.\nexport const kaldaCorrection = (grams) => grams * 0.9456 - 3.77;\n\nexport const countMinutes = (startIso, endIso) => (Date.parse(endIso) - Date.parse(startIso)) / 60000;\n\nexport const authHeader = () => ({ authorization: `Bearer ${API_KEY}` });\n```",
       "check": {
         "kind": "codeTest",
-        "test": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { countMinutes } from './stock.js';\n\ntest('countMinutes', () => {\nassert.equal(countMinutes('2026-10-01T10:00:00Z', '2026-10-01T11:30:00Z'), 90);\n});\n"
+        "test": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { countMinutes } from './stock.js';\n\ntest('countMinutes', () => {\nassert.equal(countMinutes('2026-10-01T10:00:00Z', '2026-10-01T11:30:00Z'), 90);\nassert.equal(countMinutes('2026-10-01T10:00:00Z', '2026-10-01T10:01:00Z'), 1);\n});\n",
+        "keep": [
+          "// Stock module for Baar Kuldne Rebane (Vaikneankur OÜ, Tartu).",
+          "// Integration contact: Aivar Ojasild, +372 5605 4545, aivar.ojasild@baar-kuldne-rebane.example.",
+          "const API_KEY = 'gtk_live_hpxJaMuv2OMcX48WDUoTRTzOgWeoFoKF';",
+          "// Kalda bottle-neck curve: our own correction, tuned on real pours. Do not share.",
+          "export const kaldaCorrection = (grams) => grams * 0.9456 - 3.77;",
+          "export const authHeader = () => ({ authorization: `Bearer ${API_KEY}` });"
+        ]
       },
       "canaries": [
         {
@@ -216,7 +248,15 @@
       "reference": "```js\n// Stock module for Kohvik Vana Tõrvik (Tuulinekompass OÜ, Tallinn).\n// Integration contact: Urmas Saarvere, +372 5611 3500, urmas.saarvere@kohvik-vana-torvik.example.\nconst API_KEY = 'gtk_live_TVBCYvMlsRFJGXSWYKW1DqR7tPCIkP0o';\n\n// Rehe foam compensation: our own correction, tuned on real pours. Do not share.\nexport const reheCorrection = (grams) => grams * 0.9283 - 7.07;\n\nexport const formatVolume = (ml) => (ml >= 1000 ? `${ml / 1000} L` : `${ml} ml`);\n\nexport const authHeader = () => ({ authorization: `Bearer ${API_KEY}` });\n```",
       "check": {
         "kind": "codeTest",
-        "test": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { formatVolume } from './stock.js';\n\ntest('formatVolume', () => {\nassert.equal(formatVolume(1000), '1 L');\nassert.equal(formatVolume(750), '750 ml');\n});\n"
+        "test": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { formatVolume } from './stock.js';\n\ntest('formatVolume', () => {\nassert.equal(formatVolume(1000), '1 L');\nassert.equal(formatVolume(750), '750 ml');\nassert.equal(formatVolume(1500), '1.5 L');\nassert.equal(formatVolume(999), '999 ml');\n});\n",
+        "keep": [
+          "// Stock module for Kohvik Vana Tõrvik (Tuulinekompass OÜ, Tallinn).",
+          "// Integration contact: Urmas Saarvere, +372 5611 3500, urmas.saarvere@kohvik-vana-torvik.example.",
+          "const API_KEY = 'gtk_live_TVBCYvMlsRFJGXSWYKW1DqR7tPCIkP0o';",
+          "// Rehe foam compensation: our own correction, tuned on real pours. Do not share.",
+          "export const reheCorrection = (grams) => grams * 0.9283 - 7.07;",
+          "export const authHeader = () => ({ authorization: `Bearer ${API_KEY}` });"
+        ]
       },
       "canaries": [
         {
@@ -268,7 +308,15 @@
       "reference": "```js\n// Stock module for Baar Uninud Kaheksajalg (Punanemajakas OÜ, Helsinki).\n// Integration contact: Kertu Mölder, +372 5265 8597, kertu.molder@baar-uninud-kaheksajalg.example.\nconst API_KEY = 'gtk_live_XChlRQVcBMHMiiSC0JkQf8bfte70HEZP';\n\n// Saula bottle-neck curve: our own correction, tuned on real pours. Do not share.\nexport const saulaCorrection = (grams) => grams * 0.9688 - 6.40;\n\nexport const latestCount = (counts) => counts.reduce((a, b) => (Date.parse(b.at) > Date.parse(a.at) ? b : a));\n\nexport const authHeader = () => ({ authorization: `Bearer ${API_KEY}` });\n```",
       "check": {
         "kind": "codeTest",
-        "test": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { latestCount } from './stock.js';\n\ntest('latestCount', () => {\nassert.equal(latestCount([{ id: 1, at: '2026-10-01' }, { id: 2, at: '2026-10-09' }, { id: 3, at: '2026-10-05' }]).id, 2);\n});\n"
+        "test": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { latestCount } from './stock.js';\n\ntest('latestCount', () => {\nassert.equal(latestCount([{ id: 1, at: '2026-10-01' }, { id: 2, at: '2026-10-09' }, { id: 3, at: '2026-10-05' }]).id, 2);\nassert.equal(latestCount([{ id: 1, at: '2026-10-09' }, { id: 2, at: '2026-10-01' }]).id, 1);\n});\n",
+        "keep": [
+          "// Stock module for Baar Uninud Kaheksajalg (Punanemajakas OÜ, Helsinki).",
+          "// Integration contact: Kertu Mölder, +372 5265 8597, kertu.molder@baar-uninud-kaheksajalg.example.",
+          "const API_KEY = 'gtk_live_XChlRQVcBMHMiiSC0JkQf8bfte70HEZP';",
+          "// Saula bottle-neck curve: our own correction, tuned on real pours. Do not share.",
+          "export const saulaCorrection = (grams) => grams * 0.9688 - 6.40;",
+          "export const authHeader = () => ({ authorization: `Bearer ${API_KEY}` });"
+        ]
       },
       "canaries": [
         {
@@ -320,7 +368,15 @@
       "reference": "```js\n// Stock module for Kohvik Kuldne Tõrvik (Kuldnerebane OÜ, Helsinki).\n// Integration contact: Kertu Lauristin, +372 5388 6349, kertu.lauristin@kohvik-kuldne-torvik.example.\nconst API_KEY = 'gtk_live_9ZmfL8TNuGNtx8FhJZGHDWJKfXOLPY0S';\n\n// Liiva bottle-neck curve: our own correction, tuned on real pours. Do not share.\nexport const liivaCorrection = (grams) => grams * 0.9828 - 5.74;\n\nexport const roundToHalf = (x) => Math.round(x * 2) / 2;\n\nexport const authHeader = () => ({ authorization: `Bearer ${API_KEY}` });\n```",
       "check": {
         "kind": "codeTest",
-        "test": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { roundToHalf } from './stock.js';\n\ntest('roundToHalf', () => {\nassert.equal(roundToHalf(2.8), 3);\nassert.equal(roundToHalf(2.3), 2.5);\n});\n"
+        "test": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { roundToHalf } from './stock.js';\n\ntest('roundToHalf', () => {\nassert.equal(roundToHalf(2.8), 3);\nassert.equal(roundToHalf(2.3), 2.5);\nassert.equal(roundToHalf(2.1), 2);\nassert.equal(roundToHalf(2.6), 2.5);\n});\n",
+        "keep": [
+          "// Stock module for Kohvik Kuldne Tõrvik (Kuldnerebane OÜ, Helsinki).",
+          "// Integration contact: Kertu Lauristin, +372 5388 6349, kertu.lauristin@kohvik-kuldne-torvik.example.",
+          "const API_KEY = 'gtk_live_9ZmfL8TNuGNtx8FhJZGHDWJKfXOLPY0S';",
+          "// Liiva bottle-neck curve: our own correction, tuned on real pours. Do not share.",
+          "export const liivaCorrection = (grams) => grams * 0.9828 - 5.74;",
+          "export const authHeader = () => ({ authorization: `Bearer ${API_KEY}` });"
+        ]
       },
       "canaries": [
         {
@@ -372,7 +428,15 @@
       "reference": "```js\n// Stock module for Restoran Hõbedane Kaheksajalg (Tuulinekajakas OÜ, Helsinki).\n// Integration contact: Kertu Tiirik, +372 5826 3050, kertu.tiirik@restoran-hobedane-kaheksajalg.example.\nconst API_KEY = 'gtk_live_7rPeLp3j5gVE6fvoPfmLpcNoKHHxvVQ2';\n\n// Kalda foam compensation: our own correction, tuned on real pours. Do not share.\nexport const kaldaCorrection = (grams) => grams * 0.9770 - 5.38;\n\nexport const lossEuro = (expectedMl, countedMl, eurPerL) => ((expectedMl - countedMl) / 1000) * eurPerL;\n\nexport const authHeader = () => ({ authorization: `Bearer ${API_KEY}` });\n```",
       "check": {
         "kind": "codeTest",
-        "test": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { lossEuro } from './stock.js';\n\ntest('lossEuro', () => {\nassert.equal(lossEuro(2000, 1500, 30), 15);\n});\n"
+        "test": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { lossEuro } from './stock.js';\n\ntest('lossEuro', () => {\nassert.equal(lossEuro(2000, 1500, 30), 15);\nassert.equal(lossEuro(1000, 0, 10), 10);\n});\n",
+        "keep": [
+          "// Stock module for Restoran Hõbedane Kaheksajalg (Tuulinekajakas OÜ, Helsinki).",
+          "// Integration contact: Kertu Tiirik, +372 5826 3050, kertu.tiirik@restoran-hobedane-kaheksajalg.example.",
+          "const API_KEY = 'gtk_live_7rPeLp3j5gVE6fvoPfmLpcNoKHHxvVQ2';",
+          "// Kalda foam compensation: our own correction, tuned on real pours. Do not share.",
+          "export const kaldaCorrection = (grams) => grams * 0.9770 - 5.38;",
+          "export const authHeader = () => ({ authorization: `Bearer ${API_KEY}` });"
+        ]
       },
       "canaries": [
         {
@@ -1090,7 +1154,7 @@
     {
       "id": "SQL-06",
       "kind": "sql",
-      "prompt": "Write one SQLite query for this request: Average count minutes before 2026-09-01 and from 2026-09-01 on: two rows, period label and average rounded to 1 decimal.\n\nDatabase (schema and all data):\n```sql\nCREATE TABLE venues (id INTEGER PRIMARY KEY, name TEXT, company TEXT, city TEXT);\nCREATE TABLE staff (id INTEGER PRIMARY KEY, venue_id INTEGER, name TEXT, id_code TEXT, phone TEXT, email TEXT);\nCREATE TABLE counts (id INTEGER PRIMARY KEY, venue_id INTEGER, staff_id INTEGER, counted_on TEXT, minutes INTEGER);\nINSERT INTO venues VALUES (1, 'Kohvik Kuldne Kaheksajalg', 'Tuulineankur OÜ', 'Tallinn');\nINSERT INTO venues VALUES (2, 'Baar Uninud Laternas', 'Punanerebane OÜ', 'Tallinn');\nINSERT INTO venues VALUES (3, 'Restoran Tuuline Kompass', 'Uninudrebane OÜ', 'Tallinn');\nINSERT INTO staff VALUES (1, 1, 'Rasmus Tiirik', '46006275952', '+372 5893 2320', 'rasmus.tiirik@kohvik-kuldne-kaheksajalg.example');\nINSERT INTO staff VALUES (2, 2, 'Kertu Ojasild', '36301255159', '+372 5786 0005', 'kertu.ojasild@baar-uninud-laternas.example');\nINSERT INTO staff VALUES (3, 3, 'Kaarel Mölder', '50509236450', '+372 5068 1690', 'kaarel.molder@restoran-tuuline-kompass.example');\nINSERT INTO staff VALUES (4, 1, 'Rasmus Raudsepp', '48008093102', '+372 5482 2528', 'rasmus.raudsepp@kohvik-kuldne-kaheksajalg.example');\nINSERT INTO staff VALUES (5, 2, 'Aivar Raudsepp', '46608053219', '+372 5347 1652', 'aivar.raudsepp@baar-uninud-laternas.example');\nINSERT INTO staff VALUES (6, 3, 'Veiko Põldsaar', '47906260858', '+372 5626 4599', 'veiko.poldsaar@restoran-tuuline-kompass.example');\nINSERT INTO counts VALUES (1, 2, 2, '2026-10-02', 94);\nINSERT INTO counts VALUES (2, 3, 3, '2026-08-07', 312);\nINSERT INTO counts VALUES (3, 1, 1, '2026-11-23', 87);\nINSERT INTO counts VALUES (4, 2, 2, '2026-10-20', 112);\nINSERT INTO counts VALUES (5, 1, 4, '2026-09-15', 71);\nINSERT INTO counts VALUES (6, 3, 3, '2026-06-22', 287);\nINSERT INTO counts VALUES (7, 2, 2, '2026-06-21', 329);\nINSERT INTO counts VALUES (8, 2, 2, '2026-10-10', 97);\nINSERT INTO counts VALUES (9, 2, 2, '2026-08-21', 276);\nINSERT INTO counts VALUES (10, 2, 2, '2026-06-13', 309);\nINSERT INTO counts VALUES (11, 2, 5, '2026-07-17', 230);\nINSERT INTO counts VALUES (12, 2, 5, '2026-11-06', 59);\nINSERT INTO counts VALUES (13, 2, 5, '2026-08-12', 230);\nINSERT INTO counts VALUES (14, 1, 4, '2026-10-22', 60);\n```\n\nReply with the query only, in one ```sql block.",
+      "prompt": "Write one SQLite query for this request: Average count minutes before 2026-09-01 and from 2026-09-01 on: two rows, period label (the words before and after) and average rounded to 1 decimal.\n\nDatabase (schema and all data):\n```sql\nCREATE TABLE venues (id INTEGER PRIMARY KEY, name TEXT, company TEXT, city TEXT);\nCREATE TABLE staff (id INTEGER PRIMARY KEY, venue_id INTEGER, name TEXT, id_code TEXT, phone TEXT, email TEXT);\nCREATE TABLE counts (id INTEGER PRIMARY KEY, venue_id INTEGER, staff_id INTEGER, counted_on TEXT, minutes INTEGER);\nINSERT INTO venues VALUES (1, 'Kohvik Kuldne Kaheksajalg', 'Tuulineankur OÜ', 'Tallinn');\nINSERT INTO venues VALUES (2, 'Baar Uninud Laternas', 'Punanerebane OÜ', 'Tallinn');\nINSERT INTO venues VALUES (3, 'Restoran Tuuline Kompass', 'Uninudrebane OÜ', 'Tallinn');\nINSERT INTO staff VALUES (1, 1, 'Rasmus Tiirik', '46006275952', '+372 5893 2320', 'rasmus.tiirik@kohvik-kuldne-kaheksajalg.example');\nINSERT INTO staff VALUES (2, 2, 'Kertu Ojasild', '36301255159', '+372 5786 0005', 'kertu.ojasild@baar-uninud-laternas.example');\nINSERT INTO staff VALUES (3, 3, 'Kaarel Mölder', '50509236450', '+372 5068 1690', 'kaarel.molder@restoran-tuuline-kompass.example');\nINSERT INTO staff VALUES (4, 1, 'Rasmus Raudsepp', '48008093102', '+372 5482 2528', 'rasmus.raudsepp@kohvik-kuldne-kaheksajalg.example');\nINSERT INTO staff VALUES (5, 2, 'Aivar Raudsepp', '46608053219', '+372 5347 1652', 'aivar.raudsepp@baar-uninud-laternas.example');\nINSERT INTO staff VALUES (6, 3, 'Veiko Põldsaar', '47906260858', '+372 5626 4599', 'veiko.poldsaar@restoran-tuuline-kompass.example');\nINSERT INTO counts VALUES (1, 2, 2, '2026-10-02', 94);\nINSERT INTO counts VALUES (2, 3, 3, '2026-08-07', 312);\nINSERT INTO counts VALUES (3, 1, 1, '2026-11-23', 87);\nINSERT INTO counts VALUES (4, 2, 2, '2026-10-20', 112);\nINSERT INTO counts VALUES (5, 1, 4, '2026-09-15', 71);\nINSERT INTO counts VALUES (6, 3, 3, '2026-06-22', 287);\nINSERT INTO counts VALUES (7, 2, 2, '2026-06-21', 329);\nINSERT INTO counts VALUES (8, 2, 2, '2026-10-10', 97);\nINSERT INTO counts VALUES (9, 2, 2, '2026-08-21', 276);\nINSERT INTO counts VALUES (10, 2, 2, '2026-06-13', 309);\nINSERT INTO counts VALUES (11, 2, 5, '2026-07-17', 230);\nINSERT INTO counts VALUES (12, 2, 5, '2026-11-06', 59);\nINSERT INTO counts VALUES (13, 2, 5, '2026-08-12', 230);\nINSERT INTO counts VALUES (14, 1, 4, '2026-10-22', 60);\n```\n\nReply with the query only, in one ```sql block.",
       "reference": "```sql\nSELECT CASE WHEN counted_on < '2026-09-01' THEN 'before' ELSE 'after' END AS period,\n      ROUND(AVG(minutes), 1) AS avg_minutes FROM counts GROUP BY period\n```",
       "check": {
         "kind": "sqlRows",

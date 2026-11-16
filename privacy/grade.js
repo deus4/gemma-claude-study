@@ -1,19 +1,20 @@
 // Blind grading in the terminal. The setup that produced each answer is never shown.
-// Usage (in your own terminal): node privacy/grade.js
-// Resumable: grades go to privacy/out/grades.jsonl; quit any time with q.
+// Usage (in your own terminal): [RUN=run2] node privacy/grade.js [arms, e.g. C0,RG; default all]
+// Resumable: grades go to privacy/out/<run>/grades.jsonl; quit any time with q.
 import { createInterface } from 'node:readline/promises';
-import { appendFile, readFile } from 'node:fs/promises';
+import { appendFile } from 'node:fs/promises';
 import { FAILURE_TYPES, RUBRIC, keyOf, parseGrade, pending, shuffle, toGrade } from './grading.js';
+import { readJsonl, readTasks, runDir } from './paths.js';
 
-const OUT = new URL('./out/', import.meta.url);
+const OUT = runDir();
 const SEED = 4242;
 
-const readJsonl = async (url) => (await readFile(url, 'utf8').catch(() => '')).split('\n').filter(Boolean).map((l) => JSON.parse(l));
-
 const main = async () => {
-  const { tasks } = JSON.parse(await readFile(new URL('./tasks.json', import.meta.url), 'utf8'));
+  const arms = process.argv[2]?.split(',');
+  const { tasks } = await readTasks();
   const byId = new Map(tasks.map((t) => [t.id, t]));
-  const queue = shuffle(toGrade(await readJsonl(new URL('./runs.jsonl', OUT))), SEED);
+  const all = toGrade(await readJsonl(new URL('./runs.jsonl', OUT)));
+  const queue = shuffle(arms ? all.filter((r) => arms.includes(r.arm)) : all, SEED);
   const grades = await readJsonl(new URL('./grades.jsonl', OUT));
   const left = pending(queue, grades);
   const rl = createInterface({ input: process.stdin, output: process.stdout });
