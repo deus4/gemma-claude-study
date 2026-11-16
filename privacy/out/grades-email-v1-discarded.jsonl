@@ -1,0 +1,8 @@
+{"key":"EMAIL-08|R","grade":"pass","failure":null,"at":"2026-11-12T19:29:44.251Z"}
+{"key":"EMAIL-05|C0","grade":"fail","failure":"wrong","at":"2026-11-12T19:51:25.749Z"}
+{"key":"EMAIL-05|RG","grade":"fail","failure":"wrong","at":"2026-11-12T20:52:59.978Z"}
+{"key":"EMAIL-07|L","grade":"fail","failure":"format","at":"2026-11-12T20:53:54.150Z"}
+{"key":"EMAIL-06|C0","grade":"pass","failure":null,"at":"2026-11-12T20:56:46.667Z"}
+{"key":"EMAIL-05|R","grade":"fail","failure":"missed requirement","at":"2026-11-12T20:57:27.227Z"}
+{"key":"EMAIL-06|R","grade":"pass","failure":null,"at":"2026-11-13T11:01:41.282Z"}
+{"key":"EMAIL-04|RG","grade":"fail","failure":"wrong","at":"2026-11-13T11:02:14.755Z"}

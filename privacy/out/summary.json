@@ -26,11 +26,15 @@
     },
     "reid": 0,
     "tasksWithReid": 0,
-    "pass": 15,
-    "known": 16,
-    "pending": 14,
+    "pass": 23,
+    "known": 30,
+    "pending": 0,
     "failures": {
-      "rows differ (2 vs 2)": 1
+      "rows differ (2 vs 2)": 1,
+      "missed requirement": 3,
+      "wrong": 1,
+      "format": 1,
+      "style": 1
     },
     "quality": [
       {
@@ -146,102 +150,102 @@
         "source": "auto"
       },
       {
-        "taskId": "EMAIL-01",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-02",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-03",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-04",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-05",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-06",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-07",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-08",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
         "taskId": "NOTES-01",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-02",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-03",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-04",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-05",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-06",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-01",
+        "kind": "email",
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-02",
+        "kind": "email",
+        "grade": "fail",
+        "failure": "wrong",
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-03",
+        "kind": "email",
+        "grade": "fail",
+        "failure": "format",
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-04",
+        "kind": "email",
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-05",
+        "kind": "email",
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-06",
+        "kind": "email",
+        "grade": "pass",
+        "failure": null,
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-07",
+        "kind": "email",
+        "grade": "pass",
+        "failure": null,
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-08",
+        "kind": "email",
+        "grade": "fail",
+        "failure": "style",
+        "source": "human"
       }
     ],
     "byKind": {
@@ -259,23 +263,23 @@
         "leaked": 240,
         "planted": 240
       },
-      "email": {
-        "n": 8,
-        "pass": 0,
-        "pending": 8,
-        "leaked": 29,
-        "planted": 29
-      },
       "notes": {
         "n": 6,
-        "pass": 0,
-        "pending": 6,
+        "pass": 6,
+        "pending": 0,
         "leaked": 54,
         "planted": 54
+      },
+      "email": {
+        "n": 8,
+        "pass": 2,
+        "pending": 0,
+        "leaked": 29,
+        "planted": 29
       }
     },
-    "costUsd": 0.6587595000000002,
-    "medianMs": 9866,
+    "costUsd": 0.6717094999999998,
+    "medianMs": 9161,
     "leakedValues": {
       "personal: Rasmus Undrits": 1,
       "personal: +372 5269 7942": 1,
@@ -576,31 +580,6 @@
       "client: Restoran Sinine Kompass": 1,
       "client: Baar Vana Tõrvik": 1,
       "client: Hõbedanekajakas OÜ": 1,
-      "personal: 48806059387": 1,
-      "personal: +372 5635 4792": 1,
-      "personal: margus.raudsepp@pubi-vaikne-torvik.example": 1,
-      "client: Pubi Vaikne Tõrvik": 1,
-      "personal: Janno Põldsaar": 1,
-      "personal: +372 5127 9348": 1,
-      "personal: janno.poldsaar@baar-uninud-laternas.example": 1,
-      "personal: Veiko Kalvet": 1,
-      "personal: veiko.kalvet@pubi-punane-ankur.example": 1,
-      "client: Sininemajakas OÜ": 1,
-      "personal: veiko.poldsaar@restoran-kuldne-kajakas.example": 1,
-      "client: Restoran Kuldne Kajakas": 1,
-      "personal: Katrin Tiirik": 1,
-      "personal: katrin.tiirik@restoran-hobedane-laternas.example": 1,
-      "client: Restoran Hõbedane Laternas": 1,
-      "personal: Mihkel Mölder": 1,
-      "personal: mihkel.molder@pubi-uninud-kaheksajalg.example": 1,
-      "client: Pubi Uninud Kaheksajalg": 1,
-      "personal: Janno Raudsepp": 1,
-      "personal: +372 5911 7770": 1,
-      "personal: janno.raudsepp@kohvik-vana-torvik.example": 1,
-      "client: Vanarebane OÜ": 1,
-      "personal: Kertu Saarvere": 1,
-      "personal: kertu.saarvere@pubi-hobedane-laternas.example": 1,
-      "client: Pubi Hõbedane Laternas": 1,
       "personal: Pille Härmson": 1,
       "personal: 38411122860": 1,
       "personal: pille.harmson@kohvik-vaikne-torvik.example": 1,
@@ -647,7 +626,32 @@
       "client: Baar Sinine Laternas": 1,
       "secret: gtk_live_9KQCRYdXhX8qhY2GOpldvZnNyRagblVs": 1,
       "knowhow: 0.9802": 1,
-      "knowhow: 6.86": 1
+      "knowhow: 6.86": 1,
+      "personal: 48806059387": 1,
+      "personal: +372 5635 4792": 1,
+      "personal: margus.raudsepp@pubi-vaikne-torvik.example": 1,
+      "client: Pubi Vaikne Tõrvik": 1,
+      "personal: Janno Põldsaar": 1,
+      "personal: +372 5127 9348": 1,
+      "personal: janno.poldsaar@baar-uninud-laternas.example": 1,
+      "personal: Veiko Kalvet": 1,
+      "personal: veiko.kalvet@pubi-punane-ankur.example": 1,
+      "client: Sininemajakas OÜ": 1,
+      "personal: veiko.poldsaar@restoran-kuldne-kajakas.example": 1,
+      "client: Restoran Kuldne Kajakas": 1,
+      "personal: Katrin Tiirik": 1,
+      "personal: katrin.tiirik@restoran-hobedane-laternas.example": 1,
+      "client: Restoran Hõbedane Laternas": 1,
+      "personal: Mihkel Mölder": 1,
+      "personal: mihkel.molder@pubi-uninud-kaheksajalg.example": 1,
+      "client: Pubi Uninud Kaheksajalg": 1,
+      "personal: Janno Raudsepp": 1,
+      "personal: +372 5911 7770": 1,
+      "personal: janno.raudsepp@kohvik-vana-torvik.example": 1,
+      "client: Vanarebane OÜ": 1,
+      "personal: Kertu Saarvere": 1,
+      "personal: kertu.saarvere@pubi-hobedane-laternas.example": 1,
+      "client: Pubi Hõbedane Laternas": 1
     }
   },
   {
@@ -677,11 +681,14 @@
     },
     "reid": 0,
     "tasksWithReid": 0,
-    "pass": 15,
-    "known": 16,
-    "pending": 14,
+    "pass": 24,
+    "known": 30,
+    "pending": 0,
     "failures": {
-      "rows differ (2 vs 2)": 1
+      "rows differ (2 vs 2)": 1,
+      "missed requirement": 3,
+      "wrong": 1,
+      "style": 1
     },
     "quality": [
       {
@@ -797,102 +804,102 @@
         "source": "auto"
       },
       {
-        "taskId": "EMAIL-01",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-02",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-03",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-04",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-05",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-06",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-07",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-08",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
         "taskId": "NOTES-01",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-02",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-03",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-04",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-05",
         "kind": "notes",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
       },
       {
         "taskId": "NOTES-06",
         "kind": "notes",
-        "grade": null,
+        "grade": "fail",
+        "failure": "wrong",
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-01",
+        "kind": "email",
+        "grade": "fail",
+        "failure": "style",
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-02",
+        "kind": "email",
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-03",
+        "kind": "email",
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-04",
+        "kind": "email",
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-05",
+        "kind": "email",
+        "grade": "pass",
+        "failure": null,
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-06",
+        "kind": "email",
+        "grade": "pass",
+        "failure": null,
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-07",
+        "kind": "email",
+        "grade": "pass",
+        "failure": null,
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-08",
+        "kind": "email",
+        "grade": "pass",
+        "failure": null,
+        "source": "human"
       }
     ],
     "byKind": {
@@ -910,23 +917,23 @@
         "leaked": 96,
         "planted": 240
       },
-      "email": {
-        "n": 8,
-        "pass": 0,
-        "pending": 8,
-        "leaked": 17,
-        "planted": 29
-      },
       "notes": {
         "n": 6,
-        "pass": 0,
-        "pending": 6,
+        "pass": 4,
+        "pending": 0,
         "leaked": 36,
         "planted": 54
+      },
+      "email": {
+        "n": 8,
+        "pass": 5,
+        "pending": 0,
+        "leaked": 17,
+        "planted": 29
       }
     },
-    "costUsd": 1.339316,
-    "medianMs": 18371,
+    "costUsd": 1.341498,
+    "medianMs": 17804,
     "leakedValues": {
       "personal: Rasmus Undrits": 1,
       "client: Restoran Vaikne Laternas": 1,
@@ -1060,19 +1067,6 @@
       "client: Restoran Sinine Kompass": 1,
       "client: Baar Vana Tõrvik": 1,
       "client: Hõbedanekajakas OÜ": 1,
-      "client: Pubi Vaikne Tõrvik": 1,
-      "personal: Janno Põldsaar": 1,
-      "personal: Veiko Kalvet": 1,
-      "client: Sininemajakas OÜ": 1,
-      "client: Restoran Kuldne Kajakas": 1,
-      "personal: Katrin Tiirik": 1,
-      "client: Restoran Hõbedane Laternas": 1,
-      "personal: Mihkel Mölder": 1,
-      "client: Pubi Uninud Kaheksajalg": 1,
-      "personal: Janno Raudsepp": 1,
-      "client: Vanarebane OÜ": 1,
-      "personal: Kertu Saarvere": 1,
-      "client: Pubi Hõbedane Laternas": 1,
       "personal: Pille Härmson": 1,
       "client: Kohvik Vaikne Tõrvik": 1,
       "client: Tuulinekaheksajalg OÜ": 1,
@@ -1101,19 +1095,32 @@
       "personal: Triin Härmson": 1,
       "client: Baar Sinine Laternas": 1,
       "knowhow: 0.9802": 1,
-      "knowhow: 6.86": 1
+      "knowhow: 6.86": 1,
+      "client: Pubi Vaikne Tõrvik": 1,
+      "personal: Janno Põldsaar": 1,
+      "personal: Veiko Kalvet": 1,
+      "client: Sininemajakas OÜ": 1,
+      "client: Restoran Kuldne Kajakas": 1,
+      "personal: Katrin Tiirik": 1,
+      "client: Restoran Hõbedane Laternas": 1,
+      "personal: Mihkel Mölder": 1,
+      "client: Pubi Uninud Kaheksajalg": 1,
+      "personal: Janno Raudsepp": 1,
+      "client: Vanarebane OÜ": 1,
+      "personal: Kertu Saarvere": 1,
+      "client: Pubi Hõbedane Laternas": 1
     }
   },
   {
     "arm": "G",
     "n": 30,
     "planted": 403,
-    "leaked": 11,
-    "leakPct": 2.729528535980149,
-    "tasksWithLeak": 10,
+    "leaked": 12,
+    "leakPct": 2.977667493796526,
+    "tasksWithLeak": 11,
     "leakByType": {
       "personal": {
-        "leaked": 2,
+        "leaked": 3,
         "planted": 254
       },
       "client": {
@@ -1131,11 +1138,13 @@
     },
     "reid": 3,
     "tasksWithReid": 2,
-    "pass": 15,
-    "known": 16,
-    "pending": 14,
+    "pass": 26,
+    "known": 30,
+    "pending": 0,
     "failures": {
-      "rows differ (2 vs 2)": 1
+      "rows differ (2 vs 2)": 1,
+      "missed requirement": 2,
+      "invented fact": 1
     },
     "quality": [
       {
@@ -1251,102 +1260,102 @@
         "source": "auto"
       },
       {
-        "taskId": "EMAIL-01",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-02",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-03",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-04",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-05",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-06",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-07",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-08",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
         "taskId": "NOTES-01",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-02",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-03",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-04",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-05",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-06",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-01",
+        "kind": "email",
+        "grade": "pass",
+        "failure": null,
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-02",
+        "kind": "email",
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-03",
+        "kind": "email",
+        "grade": "pass",
+        "failure": null,
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-04",
+        "kind": "email",
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-05",
+        "kind": "email",
+        "grade": "pass",
+        "failure": null,
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-06",
+        "kind": "email",
+        "grade": "pass",
+        "failure": null,
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-07",
+        "kind": "email",
+        "grade": "fail",
+        "failure": "invented fact",
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-08",
+        "kind": "email",
+        "grade": "pass",
+        "failure": null,
+        "source": "human"
       }
     ],
     "byKind": {
@@ -1364,23 +1373,23 @@
         "leaked": 2,
         "planted": 240
       },
-      "email": {
-        "n": 8,
-        "pass": 0,
-        "pending": 8,
-        "leaked": 0,
-        "planted": 29
-      },
       "notes": {
         "n": 6,
-        "pass": 0,
-        "pending": 6,
+        "pass": 6,
+        "pending": 0,
         "leaked": 0,
         "planted": 54
+      },
+      "email": {
+        "n": 8,
+        "pass": 5,
+        "pending": 0,
+        "leaked": 1,
+        "planted": 29
       }
     },
-    "costUsd": 1.3343120000000004,
-    "medianMs": 18931,
+    "costUsd": 1.3403719999999997,
+    "medianMs": 18756,
     "leakedValues": {
       "knowhow: kaldaCorrection": 3,
       "personal: ilmar.poldsaar@pubi-vaikne-laternas.example": 1,
@@ -1389,7 +1398,8 @@
       "knowhow: reheCorrection": 1,
       "knowhow: Saula bottle-neck curve": 1,
       "knowhow: saulaCorrection": 1,
-      "personal: veiko.undrits@baar-vana-torvik.example": 1
+      "personal: veiko.undrits@baar-vana-torvik.example": 1,
+      "personal: Janno Raudsepp": 1
     }
   },
   {
@@ -1419,11 +1429,14 @@
     },
     "reid": 0,
     "tasksWithReid": 0,
-    "pass": 15,
-    "known": 16,
-    "pending": 14,
+    "pass": 23,
+    "known": 30,
+    "pending": 0,
     "failures": {
-      "rows differ (2 vs 2)": 1
+      "rows differ (2 vs 2)": 1,
+      "wrong": 1,
+      "missed requirement": 4,
+      "format": 1
     },
     "quality": [
       {
@@ -1539,102 +1552,102 @@
         "source": "auto"
       },
       {
-        "taskId": "EMAIL-01",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-02",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-03",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-04",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-05",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-06",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-07",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "EMAIL-08",
-        "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
         "taskId": "NOTES-01",
         "kind": "notes",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
+        "grade": "fail",
+        "failure": "wrong",
+        "source": "human"
       },
       {
         "taskId": "NOTES-02",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-03",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-04",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-05",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-06",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-01",
+        "kind": "email",
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-02",
+        "kind": "email",
+        "grade": "fail",
+        "failure": "format",
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-03",
+        "kind": "email",
+        "grade": "pass",
+        "failure": null,
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-04",
+        "kind": "email",
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-05",
+        "kind": "email",
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-06",
+        "kind": "email",
+        "grade": "pass",
+        "failure": null,
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-07",
+        "kind": "email",
+        "grade": "pass",
+        "failure": null,
+        "source": "human"
+      },
+      {
+        "taskId": "EMAIL-08",
+        "kind": "email",
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
       }
     ],
     "byKind": {
@@ -1652,23 +1665,23 @@
         "leaked": 0,
         "planted": 240
       },
-      "email": {
-        "n": 8,
-        "pass": 0,
-        "pending": 8,
-        "leaked": 0,
-        "planted": 29
-      },
       "notes": {
         "n": 6,
-        "pass": 0,
-        "pending": 6,
+        "pass": 5,
+        "pending": 0,
         "leaked": 0,
         "planted": 54
+      },
+      "email": {
+        "n": 8,
+        "pass": 3,
+        "pending": 0,
+        "leaked": 0,
+        "planted": 29
       }
     },
-    "costUsd": 0.8014796000000001,
-    "medianMs": 18627,
+    "costUsd": 0.7977652000000002,
+    "medianMs": 18539,
     "leakedValues": {
       "knowhow: kaldaCorrection": 3,
       "knowhow: liivaCorrection": 2,
@@ -1705,15 +1718,17 @@
     },
     "reid": 0,
     "tasksWithReid": 0,
-    "pass": 12,
-    "known": 18,
-    "pending": 12,
+    "pass": 16,
+    "known": 30,
+    "pending": 0,
     "failures": {
       "1 test(s) fail": 1,
       "rows differ (2 vs 2)": 1,
       "rows differ (5 vs 2)": 1,
       "rows differ (6 vs 2)": 1,
-      "key point missing": 2
+      "missed requirement": 8,
+      "invented fact": 1,
+      "key point missing": 1
     },
     "quality": [
       {
@@ -1829,102 +1844,102 @@
         "source": "auto"
       },
       {
+        "taskId": "NOTES-01",
+        "kind": "notes",
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
+      },
+      {
+        "taskId": "NOTES-02",
+        "kind": "notes",
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
+      },
+      {
+        "taskId": "NOTES-03",
+        "kind": "notes",
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
+      },
+      {
+        "taskId": "NOTES-04",
+        "kind": "notes",
+        "grade": "fail",
+        "failure": "invented fact",
+        "source": "human"
+      },
+      {
+        "taskId": "NOTES-05",
+        "kind": "notes",
+        "grade": "pass",
+        "failure": null,
+        "source": "human"
+      },
+      {
+        "taskId": "NOTES-06",
+        "kind": "notes",
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
+      },
+      {
         "taskId": "EMAIL-01",
         "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
+        "grade": "fail",
+        "failure": "key point missing",
+        "source": "auto"
       },
       {
         "taskId": "EMAIL-02",
         "kind": "email",
         "grade": "fail",
-        "failure": "key point missing",
-        "source": "auto"
+        "failure": "missed requirement",
+        "source": "human"
       },
       {
         "taskId": "EMAIL-03",
         "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
       },
       {
         "taskId": "EMAIL-04",
         "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
       },
       {
         "taskId": "EMAIL-05",
         "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
       },
       {
         "taskId": "EMAIL-06",
         "kind": "email",
-        "grade": "fail",
-        "failure": "key point missing",
-        "source": "auto"
+        "grade": "pass",
+        "failure": null,
+        "source": "human"
       },
       {
         "taskId": "EMAIL-07",
         "kind": "email",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "EMAIL-08",
         "kind": "email",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "NOTES-01",
-        "kind": "notes",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "NOTES-02",
-        "kind": "notes",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "NOTES-03",
-        "kind": "notes",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "NOTES-04",
-        "kind": "notes",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "NOTES-05",
-        "kind": "notes",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
-      },
-      {
-        "taskId": "NOTES-06",
-        "kind": "notes",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
+        "source": "human"
       }
     ],
     "byKind": {
@@ -1942,19 +1957,19 @@
         "leaked": 0,
         "planted": 240
       },
-      "email": {
-        "n": 8,
-        "pass": 0,
-        "pending": 6,
-        "leaked": 0,
-        "planted": 29
-      },
       "notes": {
         "n": 6,
-        "pass": 0,
-        "pending": 6,
+        "pass": 1,
+        "pending": 0,
         "leaked": 0,
         "planted": 54
+      },
+      "email": {
+        "n": 8,
+        "pass": 3,
+        "pending": 0,
+        "leaked": 0,
+        "planted": 29
       }
     },
     "costUsd": 0,
