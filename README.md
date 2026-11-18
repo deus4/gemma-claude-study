@@ -34,8 +34,7 @@ already holds, so use a new name to run again.
   placeholder swap and restore (`placeholders.js`), runner (`run.js`), grading (`grade.js`), report
   (`report.js`), tests (`*.test.js`).
 - `privacy/tasks.json`: the 30 tasks (as used in run 2). Fully synthetic: invented people, Estonian ID codes
-  with valid
-  checksums, venues, API keys and "secret methods". Safe to publish.
+  with valid checksums, venues, API keys and "secret methods". Safe to publish.
 - `privacy/out/run1/`, `privacy/out/run2/`: every result, one folder per run. `runs.jsonl` (what was sent
   and answered, per task and setup), `grades.jsonl` (grades given by hand), `REPORT.md`, run logs and the
   task set of that run. Run 1 also keeps the first e-mail runs, replaced after a task fix
