@@ -26,10 +26,13 @@
     },
     "reid": 0,
     "tasksWithReid": 0,
-    "pass": 16,
-    "known": 16,
-    "pending": 14,
-    "failures": {},
+    "pass": 27,
+    "known": 30,
+    "pending": 0,
+    "failures": {
+      "missed requirement": 1,
+      "wrong": 2
+    },
     "quality": [
       {
         "taskId": "CODE-01",
@@ -146,100 +149,100 @@
       {
         "taskId": "EMAIL-01",
         "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
       },
       {
         "taskId": "EMAIL-02",
         "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
+        "grade": "fail",
+        "failure": "wrong",
+        "source": "human"
       },
       {
         "taskId": "EMAIL-03",
         "kind": "email",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "EMAIL-04",
         "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
+        "grade": "fail",
+        "failure": "wrong",
+        "source": "human"
       },
       {
         "taskId": "EMAIL-05",
         "kind": "email",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "EMAIL-06",
         "kind": "email",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "EMAIL-07",
         "kind": "email",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "EMAIL-08",
         "kind": "email",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-01",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-02",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-03",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-04",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-05",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-06",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       }
     ],
     "byKind": {
@@ -259,15 +262,15 @@
       },
       "email": {
         "n": 8,
-        "pass": 0,
-        "pending": 8,
+        "pass": 5,
+        "pending": 0,
         "leaked": 29,
         "planted": 29
       },
       "notes": {
         "n": 6,
-        "pass": 0,
-        "pending": 6,
+        "pass": 6,
+        "pending": 0,
         "leaked": 54,
         "planted": 54
       }
@@ -1425,11 +1428,13 @@
     },
     "reid": 0,
     "tasksWithReid": 0,
-    "pass": 15,
-    "known": 16,
-    "pending": 14,
+    "pass": 24,
+    "known": 30,
+    "pending": 0,
     "failures": {
-      "1 test(s) fail": 1
+      "1 test(s) fail": 1,
+      "wrong": 1,
+      "missed requirement": 4
     },
     "quality": [
       {
@@ -1547,100 +1552,100 @@
       {
         "taskId": "EMAIL-01",
         "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
+        "grade": "fail",
+        "failure": "wrong",
+        "source": "human"
       },
       {
         "taskId": "EMAIL-02",
         "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
       },
       {
         "taskId": "EMAIL-03",
         "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
       },
       {
         "taskId": "EMAIL-04",
         "kind": "email",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
       },
       {
         "taskId": "EMAIL-05",
         "kind": "email",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "EMAIL-06",
         "kind": "email",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "EMAIL-07",
         "kind": "email",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "EMAIL-08",
         "kind": "email",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-01",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-02",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-03",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-04",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       },
       {
         "taskId": "NOTES-05",
         "kind": "notes",
-        "grade": null,
-        "failure": null,
-        "source": "pending"
+        "grade": "fail",
+        "failure": "missed requirement",
+        "source": "human"
       },
       {
         "taskId": "NOTES-06",
         "kind": "notes",
-        "grade": null,
+        "grade": "pass",
         "failure": null,
-        "source": "pending"
+        "source": "human"
       }
     ],
     "byKind": {
@@ -1660,15 +1665,15 @@
       },
       "email": {
         "n": 8,
-        "pass": 0,
-        "pending": 8,
+        "pass": 4,
+        "pending": 0,
         "leaked": 0,
         "planted": 29
       },
       "notes": {
         "n": 6,
-        "pass": 0,
-        "pending": 6,
+        "pass": 5,
+        "pending": 0,
         "leaked": 0,
         "planted": 54
       }
